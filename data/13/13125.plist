@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Breaking Dawn</string>
+	<key>CFBundleExecutable</key>
+	<string>BreakingDawn-SM001-HA</string>
+	<key>CFBundleIconFile</key>
+	<string>BreakingDawn-SM001-HA_ICON.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.scrollmotion.BreakingDawn-SM001-HA</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>BreakingDawn-SM001-HA</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.scrollmotion.app.BreakingDawn-SM001-HA</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>BreakingDawn-SM001-HA</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.03</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.2</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MMAppID</key>
+	<string>778e37ddffffffffaf8963d9</string>
+	<key>MinimumOSVersion</key>
+	<string>2.2</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>URLBookStoreGrid</key>
+	<string>http://www.scrollmotion.com/BookReader/store_grid.php?id=BreakingDawn-SM001-HA</string>
+	<key>URLBookStoreList</key>
+	<string>http://www.scrollmotion.com/BookReader/store_list.php?id=BreakingDawn-SM001-HA</string>
+	<key>database</key>
+	<string>BreakingDawn-SM001-HA</string>
+	<key>filename</key>
+	<string>BreakingDawn-SM001-HA_%04d.ice</string>
+	<key>lastFileNumber</key>
+	<string>548</string>
+	<key>prefacePageNames</key>
+	<array>
+		<string>C</string>
+	</array>
+	<key>slideUpdate</key>
+	<string>.7</string>
+	<key>thisBookIndex</key>
+	<string>0</string>
+</dict>
+</plist>
