@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>iRa Pro</string>
+	<key>CFBundleExecutable</key>
+	<string>iRa Pro</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.lextech.iRa</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>iRa Pro</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.lextech.iRa</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ira</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.6.0417</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.1</string>
+	<key>HelpEmail</key>
+	<string>support@lextechlabs.com</string>
+	<key>HelpPhone</key>
+	<string>(555)555-5555</string>
+	<key>HelpURL</key>
+	<string>www.lextechlabs.com</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>2.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>RegURL</key>
+	<string>register.lextechlabs.com</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeRight</string>
+</dict>
+</plist>
