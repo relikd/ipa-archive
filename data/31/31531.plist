@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Spb Wallet</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>swt</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>com.softspb.WalletDoc</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Wallet</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.softspb.Wallet</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Wallet</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.softspb.Wallet</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wallet</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.7</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.0</string>
+	<key>MinimumOSVersion</key>
+	<string>2.0</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIRequiresPersistentWiFi</key>
+	<true/>
+</dict>
+</plist>
