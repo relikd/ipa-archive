@@ -8,9 +8,10 @@ The list of indexed collections can be found at [data/urls.json](data/urls.json)
 
 ## Using the webpage
 
-You can add the IPA Archive webpage to your homescreen.
-Note however, that each time you click on the app icon, it will load the whole database again and clear your previously entered data.
-To prevent that, use Safari to jump back to your search results.
+You can add the [IPA Archive](https://relikd.github.io/ipa-archive) webpage to your homescreen.
+Note however, that each time you click on the app icon, it will reload the whole database and clear your previous results.
+To prevent that, use Safari instead.
+Switching back to the already open webpage, will not trigger a reload.
 The homescreen icon is still useful as bookmark though ;-)
 
 Additionally, your configuration is saved in the URL.
@@ -19,59 +20,19 @@ Then click on search and safe that URL to your homescreen.
 (Or wait until you have configured your Plist server and save that URL instead)
 
 
-## TODO
-
-- Reindexing of previous URLs (should remove dead-links and add new ones)
-- Periodic check on outdated URLs (see previous)
-
-
-## Requirements
-
-- `ipa_archive.py` has a dependency on [RemoteZip](https://github.com/gtsystem/python-remotezip) (`pip install remotezip`)
-- `image_optim.sh` uses [ImageOptim](https://github.com/ImageOptim/ImageOptim) (and probably requires a Mac)
-- The [Plist Generator server](#starting-plist-server) needs either Python or PHP
-
-
-## General workflow
-
-To add files to the archive follow these steps:
-
-1. `python3 ipa_archive.py add URL`
-2. `python3 ipa_archive.py run`
-3. If any of the URLs failed, check if it can be fixed. (though most likely the ipa-zip file is broken)
-    - If you could fix any file, run `python3 ipa_archive.py err reset` to try again (this will also print the error again)
-    - If some files are unfixable, run `python3 ipa_archive.py set err ID1 ID2` to ignore them
-4. `./tools/image_optim.sh` (this will convert all .png files to .jpg)
-5. `python3 ipa_archive.py export json`
-
-Handling plist errors (json-like format):
-- `./tools/plist_convert.sh 21968`
-- `./ipa_archive.py get img 21968`
-
-
-## Database schema
-
-The column `done` is encoded as follows:
-- `0` (queued, needs processing)
-- `1` (done)
-- `3` (error, maybe fixable, needs attention)
-- `4` (error, unfixable, ignore in export)
-
-
 ## Starting Plist Server
 
-You need to start the plist generator service on a network location that is accessible to your iDevice.
-That can be, for example, your local machine which is accissble through your home network (LAN).
-Therefore you will need to determine the IP address of your hosting PC.
-You can either use Python or PHP to host the service.
+The Plist server needs either Python or PHP.
 
-(it is sufficient to copy and execute one of server files, either python or php)
+You must start the service on a network location that is accessible to your iDevice.
+That can be, for example, your local Mac/PC which is accessible through your home network (LAN).
+You may need to determine the IP address of your PC.
 
 
 ### ... with Python
 
 With python, the IP address *should* be determined automatically.
-After starting the server:
+Download [tools/plist_server.py](tools/plist_server.py) and start the server:
 
 ```sh
 python3 tools/plist_server.py
@@ -84,15 +45,64 @@ If the IP starts with `127.x.x.x` or `10.x.x.x`, you will need to find the IP ad
 
 ### ... with PHP
 
-Similar to python, you start the server with:
+Similar to python, you can download [tools/plist_server/index.php](tools/plist_server/index.php) and start the server with:
 
 ```sh
 php -S 0.0.0.0:8026 -t tools/plist_server
 ```
 
-However, you have to find your local IP address manually (Mac: `ipconfig getifaddr en0`).
+If you are already inside the `plist_server` directory, you can omit the `-t` flag.
 Note, we use `0.0.0.0` instead of localhost, to make the server available to other network devices.
-If you are inside the `plist_server` folder, you can omit the `-t` flag.
+However, for the IPA Archive webpage you should use your own IP address, e.g., `http://192.168.0.1:8026`.
 
-For the IPA Archive webpage you should use `http://192.168.0.1:8026` (with your own IP address).
 
+### Local IP address
+
+If the Python script does not detect the IP correctly - or you use PHP - you have to find the IP address manually.
+On a Mac you can run `ipconfig getifaddr en0`.
+Similar commands exist on Linux and Windows.
+
+
+## Development
+
+### TODO
+
+- Reindexing of previous URLs (should remove dead-links and add new ones)
+- Periodic check on outdated URLs (see previous)
+
+
+### Requirements
+
+- `ipa_archive.py` has a dependency on [RemoteZip](https://github.com/gtsystem/python-remotezip) (`pip install remotezip`)
+- `image_optim.sh` uses [ImageOptim](https://github.com/ImageOptim/ImageOptim) (probably requires a Mac)
+- `convert_plist.sh` uses PlistBuddy (probably requires a Mac)
+
+
+### Database schema
+
+The column `done` is encoded as follows:
+- `0` (queued, needs processing)
+- `1` (done)
+- `3` (error, maybe fixable, needs attention)
+- `4` (error, unfixable, ignore in export)
+
+
+### General workflow
+
+To add files to the archive follow these steps:
+
+1. `python3 ipa_archive.py add URL`
+2. `python3 ipa_archive.py run`
+3. If any of the URLs failed, check if it can be fixed. (though most likely the ipa-zip file is broken)
+    - If fixable, `python3 ipa_archive.py err reset` # set all err to done=0 and print errors again
+    - If unfixable, `python3 ipa_archive.py set err ID1 ID2` # mark ids done=4
+4. `./tools/image_optim.sh` (this will convert all .png files to .jpg)
+5. `python3 ipa_archive.py export json`
+
+Userful helper:
+- `./tools/check_error_no_plist.sh` # checks that no plist exists for a done=4 entry
+- `./tools/check_missing_img.sh` # checks that for each .plist an .jpg exists
+- `./tools/convert_plist.sh 21968` # convert json-like format to XML
+- `./ipa_archive.py get url 21968` # print URL of entry
+- `./ipa_archive.py get img 21968` # force (re)download of .png image
+- `./ipa_archive.py get ipa 21968` # download ipa file for debugging
