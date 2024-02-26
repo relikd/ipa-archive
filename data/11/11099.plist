@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>TouchToFindEP2</string>
+	<key>CFBundleExecutable</key>
+	<string>TouchToFindEP2</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.daltong.TouchToFindEP2</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>TouchToFindEP2</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.3</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>2.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>Stage10_point</key>
+	<string>77:148-31:41 78:251-31:31 177:117-52:39</string>
+	<key>Stage11_point</key>
+	<string>172:10-28:28 26:226-33:34 19:272-39:27</string>
+	<key>Stage12_point</key>
+	<string>60:4-35:35 141:92-40:40 197:263-38:38</string>
+	<key>Stage13_point</key>
+	<string>69:37-33:34 149:51-89:79 208:150-29:29</string>
+	<key>Stage14_point</key>
+	<string>134:83-18:18 154:97-23:34 208:164-33:33</string>
+	<key>Stage15_point</key>
+	<string>2:25-31:57 30:132-26:26 112:124-33:36</string>
+	<key>Stage16_point</key>
+	<string>40:38-32:32 89:72-27:27 167:204-20:20</string>
+	<key>Stage17_point</key>
+	<string>0:183-28:35 57:90-25:25 194:270-32:32</string>
+	<key>Stage18_point</key>
+	<string>99:15-39:39 95:241-42:42 152:259-49:41</string>
+	<key>Stage19_point</key>
+	<string>63:235-54:54 86:18-41:41 175:142-60:60</string>
+	<key>Stage1_point</key>
+	<string>12:31-44:44 97:28-47:47 43:262-65:40</string>
+	<key>Stage20_point</key>
+	<string>12:51-45:45 150:64-39:39 209:22-30:112</string>
+	<key>Stage21_point</key>
+	<string>66:247-42:42 88:68-41:41 134:139-37:37</string>
+	<key>Stage22_point</key>
+	<string>1:124-25:25 61:43-44:50 130:142-46:46</string>
+	<key>Stage23_point</key>
+	<string>31:177-41:41 173:159-34:34 180:95-48:48</string>
+	<key>Stage24_point</key>
+	<string>5:222-37:37 90:110-47:47 121:4-38:38</string>
+	<key>Stage25_point</key>
+	<string>139:84-36:36 150:132-37:37 168:245-55:55</string>
+	<key>Stage26_point</key>
+	<string>165:31-38:38 135:98-37:37 194:262-46:37</string>
+	<key>Stage27_point</key>
+	<string>45:9-54:54 115:92-60:81 212:140-28:28</string>
+	<key>Stage28_point</key>
+	<string>46:88-45:45 168:32-44:44 153:264-40:36</string>
+	<key>Stage29_point</key>
+	<string>3:251-36:51 188:114-50:50 181:224-53:53</string>
+	<key>Stage2_point</key>
+	<string>158:26-30:48 110:104-36:36 65:268-46:34</string>
+	<key>Stage30_point</key>
+	<string>23:192-28:29 129:267-32:32 191:2-27:27</string>
+	<key>Stage31_point</key>
+	<string>88:5-32:32 200:27-34:38 194:199-36:36</string>
+	<key>Stage32_point</key>
+	<string>40:44-32:32 87:159-26:26 74:216-27:27</string>
+	<key>Stage33_point</key>
+	<string>1:73-36:28 45:228-24:24 188:63-22:22</string>
+	<key>Stage34_point</key>
+	<string>0:7-42:60 35:83-30:30 22:272-29:29</string>
+	<key>Stage35_point</key>
+	<string>42:94-48:48 106:45-59:40 219:127-20:31 </string>
+	<key>Stage36_point</key>
+	<string>34:69-43:43 35:195-35:35 155:52-36:36</string>
+	<key>Stage37_point</key>
+	<string>40:9-37:59 67:86-40:45 89:212-56:49</string>
+	<key>Stage38_point</key>
+	<string>81:93-42:42 127:159-46:46 199:17-39:62</string>
+	<key>Stage39_point</key>
+	<string>134:13-45:45 151:135-36:36 161:226-66:66</string>
+	<key>Stage3_point</key>
+	<string>3:71-56:66 101:159-53:42 201:119-38:37</string>
+	<key>Stage40_point</key>
+	<string>47:81-41:30 45:192-35:60 185:177-36:36</string>
+	<key>Stage41_point</key>
+	<string>24:27-49:49 126:209-43:43 198:90-32:32</string>
+	<key>Stage42_point</key>
+	<string>90:166-62:43 136:270-42:31 200:22-39:39</string>
+	<key>Stage43_point</key>
+	<string>1:28-33:38 108:225-42:42 201:134-37:45</string>
+	<key>Stage44_point</key>
+	<string>3:118-20:37 62:2-42:32 53:65-54:54</string>
+	<key>Stage45_point</key>
+	<string>3:222-37:37 119:126-32:32 123:223-36:36</string>
+	<key>Stage46_point</key>
+	<string>30:119-38:38 136:153-48:48 136:236-42:42</string>
+	<key>Stage47_point</key>
+	<string>14:28-63:47 72:81-43:43 158:63-48:58</string>
+	<key>Stage48_point</key>
+	<string>1:135-34:57 13:210-39:48 208:211-31:38</string>
+	<key>Stage49_point</key>
+	<string>71:19-32:32 155:182-25:25 150:259-26:26</string>
+	<key>Stage4_point</key>
+	<string>44:227-41:45 145:28-47:45 200:128-33:57</string>
+	<key>Stage50_point</key>
+	<string>45:262-62:40 89:1-44:44 146:193-45:45</string>
+	<key>Stage51_point</key>
+	<string>46:148-46:46 68:30-44:44 185:32-33:33</string>
+	<key>Stage52_point</key>
+	<string>0:228-16:16 80:179-29:29 203:10-27:27</string>
+	<key>Stage53_point</key>
+	<string>60:197-62:62 152:28-32:32 182:129-45:45</string>
+	<key>Stage54_point</key>
+	<string>4:137-47:47 126:140-54:54 184:78-57:57</string>
+	<key>Stage55_point</key>
+	<string>16:4-49:49 58:62-62:62 102:251-51:51</string>
+	<key>Stage56_point</key>
+	<string>14:53-39:39 144:40-36:36 166:193-62:50</string>
+	<key>Stage57_point</key>
+	<string>66:64-52:52 149:3-34:26 170:94-35:35</string>
+	<key>Stage58_point</key>
+	<string>10:199-35:35 85:160-41:41 196:79-36:36</string>
+	<key>Stage59_point</key>
+	<string>77:4-29:29 147:153-34:34 175:113-49:35</string>
+	<key>Stage5_point</key>
+	<string>4:19-50:50 168:244-50:50 201:177-38:38</string>
+	<key>Stage60_point</key>
+	<string>50:71-40:40 100:247-38:38 197:141-41:52</string>
+	<key>Stage61_point</key>
+	<string>139:100-22:22 114:122-34:34 125:171-45:74</string>
+	<key>Stage62_point</key>
+	<string>33:214-34:34 159:256-38:38 193:101-36:36</string>
+	<key>Stage63_point</key>
+	<string>6:10-42:42 176:117-38:38 88:249-48:48</string>
+	<key>Stage64_point</key>
+	<string>13:15-51:51 1:177-52:52 216:177-24:24</string>
+	<key>Stage65_point</key>
+	<string>94:4-44:44 84:98-64:64 57:249-31:31</string>
+	<key>Stage66_point</key>
+	<string>0:218-40:63 126:0-45:45 200:191-41:53</string>
+	<key>Stage67_point</key>
+	<string>6:106-17:17 214:28-27:54 211:88-22:22</string>
+	<key>Stage68_point</key>
+	<string>15:253-40:40 93:248-51:51 99:87-58:58</string>
+	<key>Stage69_point</key>
+	<string>118:156-38:38 165:23-49:49 150:238-65:65</string>
+	<key>Stage6_point</key>
+	<string>60:7-34:34 6:179-76:61 158:110-65:65</string>
+	<key>Stage70_point</key>
+	<string>1:130-37:37 121:21-36:36 195:89-46:63</string>
+	<key>Stage71_point</key>
+	<string>43:100-32:32 119:155-52:52 130:235-53:53</string>
+	<key>Stage72_point</key>
+	<string>10:66-44:44 114:223-44:44 190:213-50:50</string>
+	<key>Stage73_point</key>
+	<string>60:2-57:57 4:119-79:52 117:157-50:50</string>
+	<key>Stage74_point</key>
+	<string>2:19-46:82 5:173-23:37 171:236-55:55</string>
+	<key>Stage75_point</key>
+	<string>0:174-23:56 95:213-36:36 195:94-45:52</string>
+	<key>Stage76_point</key>
+	<string>33:255-45:45 161:66-42:42 197:191-43:43</string>
+	<key>Stage77_point</key>
+	<string>23:0-56:41 117:92-50:50 157:205-54:46</string>
+	<key>Stage78_point</key>
+	<string>1:76-40:40 15:211-33:33 187:264-31:31</string>
+	<key>Stage79_point</key>
+	<string>15:27-39:39 99:11-30:30 10:139-41:41</string>
+	<key>Stage7_point</key>
+	<string>1:64-47:47 96:82-51:45 177:168-42:42</string>
+	<key>Stage80_point</key>
+	<string>6:46-58:58 113:199-40:40 174:236-60:60</string>
+	<key>Stage8_point</key>
+	<string>56:207-33:33 113:156-36:48 169:156-34:34</string>
+	<key>Stage9_point</key>
+	<string>82:246-28:28 115:61-41:41 217:53-23:45</string>
+	<key>TotalStage</key>
+	<string>80</string>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+</dict>
+</plist>
