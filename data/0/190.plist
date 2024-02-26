@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>赌场合集</string>
+	<key>CFBundleExecutable</key>
+	<string>iCasino</string>
+	<key>CFBundleIconFile</key>
+	<string>iconPremium.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.digitalchocolate.casino12</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>iCasino</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>0.2.3</string>
+	<key>CFLinkGMG</key>
+	<string>http://www.digitalchocolate.com/iphone?utm_source=Casino12Pack&amp;utm_medium=GMGbutton&amp;utm_content=MainMenu&amp;utm_campaign=Casino12Pack</string>
+	<key>CFNeededRamMegs</key>
+	<integer>8</integer>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos3.1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>2.2</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIRoleDisplayName</key>
+	<string>赌场合集</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+</dict>
+</plist>
