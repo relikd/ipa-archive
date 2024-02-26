@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MyWords</string>
+	<key>CFBundleExecutable</key>
+	<string>MyWords-French</string>
+	<key>CFBundleIconFile</key>
+	<string>MyWords-French.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.innovativelanguage.mywordsfr</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MyWords-French</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.5</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.1</string>
+	<key>DefaultOurAppsCategory</key>
+	<string>French</string>
+	<key>GlobalOurAppsXML</key>
+	<string>http://languagepod101.com/iphone/icons/applications.xml</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>LanguageFilename</key>
+	<string>french</string>
+	<key>LocalOurAppsXML</key>
+	<string>OurApps.xml</string>
+	<key>MinDatePickerDay</key>
+	<integer>15</integer>
+	<key>MinDatePickerMonth</key>
+	<integer>11</integer>
+	<key>MinDatePickerYear</key>
+	<integer>2008</integer>
+	<key>MinimumOSVersion</key>
+	<string>2.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIRequiresPersistentWiFi</key>
+	<string>false</string>
+</dict>
+</plist>
