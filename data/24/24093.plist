@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CCAppStoreLink</key>
+	<string>http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=301548937&amp;mt=8</string>
+	<key>CCCurrencyURL</key>
+	<string>http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml</string>
+	<key>CCIsElafri</key>
+	<string>NO</string>
+	<key>CCLiteNagNotificationURL</key>
+	<string>http://update.codingcurious.com/converted/nag_notification.html</string>
+	<key>CCRatesCastURL</key>
+	<string>http://update.codingcurious.com/converted/ratescast.xml</string>
+	<key>CCReviewNotificationURL</key>
+	<string>http://update.codingcurious.com/converted/review_notification.html</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Converted</string>
+	<key>CFBundleExecutable</key>
+	<string>Converted</string>
+	<key>CFBundleIconFile</key>
+	<string>home.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.codingcurious.converted</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Converted</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.5.7</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.0</string>
+	<key>L0SolicitReviewAppStoreURL</key>
+	<string>http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=301548937&amp;pageNumber=0&amp;sortOrdering=1&amp;type=Purple+Software</string>
+	<key>MinimumOSVersion</key>
+	<string>2.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIPrerenderedIcon</key>
+	<string>YES</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleOpaqueBlack</string>
+</dict>
+</plist>
