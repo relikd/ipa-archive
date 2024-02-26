@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Ship vs. Stick</string>
+	<key>CFBundleExecutable</key>
+	<string>DoodleWars</string>
+	<key>CFBundleIconFile</key>
+	<string>App Icon.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.herpgames.DoodleWars</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>DoodleWars</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.2.1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MCApplicationId</key>
+	<string>24ca5d10-e255-47ac-8e2d-79726fbb8ab3</string>
+	<key>MinimumOSVersion</key>
+	<string>2.2.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+</dict>
+</plist>
