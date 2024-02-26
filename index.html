@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0" />
+	<title>IPA Archive</title>
+	<link rel="shortcut icon" href="./favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<script src='script.js'></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>IPA Archive</h1>
+	<form onsubmit="event.preventDefault(); searchIPA(); return false;" autocomplete="off">
+		<label for="search">Search: <input id="search" placeholder="Search"></label>
+		<label for="bundleid">BundleId: <input id="bundleid" placeholder="com.gameloft."></label>
+		<label for="minos">min OS: <input id="minos" placeholder="1.0"></label>
+		<label for="maxos">max OS: <input id="maxos" placeholder="5.1.1"></label>
+		<label for="device">Device: <select id="device">
+				<option value="">Any</option>
+				<option value="1">iPhone</option>
+				<option value="2">iPad</option>
+				<option value="3">TV</option>
+				<option value="4">Watch</option>
+			</select></label>
+		<button type="submit">Search</button>
+	</form>
+	<div id="content">JavaScript disabled?</div>
+	<div id="templates" hidden>
+		<div class="entry">
+			<div>
+				<img src="$IMG">
+				<button onclick="installIpa($IDX)">Install</button>
+			</div>
+			<div class="info">
+				<h4>$TITLE</h4>
+				<div>BundleId: <a onclick="searchByBundleId(this)">$BUNDLEID</a></div>
+				<div>Version: v$VERSION – $SIZE</div>
+				<div>Device: $PLATFORM</div>
+				<div>Minimum OS: $MINOS</div>
+				<div>Link: <a href="$URL" rel="noopener noreferrer nofollow">$URLNAME</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="overlay" hidden>
+		<div id="installMsg">
+			<h3>Install on device</h3>
+			<p>
+				Unfortunatelly, this function is not possible with static HTML+JS.
+				You must provided a plist generator URL.
+				See <a href="Readme.md" target="_blank">Readme</a> file for further instructions on how to set up such a
+				service.
+			</p>
+			<form onsubmit="event.preventDefault(); setPlistGen(); return false;" autocomplete="off">
+				<label for="plistServer">Generator URL:</label>
+				<input id="plistServer" placeholder="http://192.168.0.1/">
+				<button type="submit">Save</button>
+				<button type="button" onclick="document.getElementById('overlay').hidden=true">Abort</button>
+			</form>
+		</div>
+	</div>
+	<script>loadDB()</script>
+</body>
+
+</html>

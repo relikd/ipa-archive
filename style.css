@@ -1,0 +1,93 @@
+body {
+  margin: 4px;
+  font-family: sans-serif;
+}
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Search form */
+label {
+  white-space: nowrap
+}
+form input, form select, form button {
+  margin: 0 8px 4px 0
+}
+#minos,
+#maxos {
+  width: 4em;
+}
+
+/* General layout */
+#content {
+  margin: 20px 0;
+}
+
+/* Plist install */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+  min-width: 100%;
+  min-height: 100%;
+}
+#installMsg {
+  margin: 40px auto;
+  max-width: 600px;
+  background: white;
+  padding: 20px 30px;
+}
+
+/* IPA entry */
+h4 {
+  margin: 0;
+}
+.entry {
+  display: inline-block;
+  margin: 4px;
+  width: 370px;
+  background: #eee;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.entry>div {
+  display: inline-block;
+  margin: 8px 8px 8px 0;
+}
+.entry img {
+  width: 74px;
+  height: 74px;
+  margin: 8px;
+  border-radius: 17%;
+  vertical-align: top;
+}
+.entry button {
+  display: block;
+  width: 74px;
+  margin: 0 auto;
+}
+
+/* Pagination */
+.shortpage {
+  text-align: center;
+  margin: 30px;
+}
+.shortpage>span {
+  margin: 0 20px;
+}
+.shortpage>button {
+  font-size: 1em;
+}
+.shortpage>button:first-child {
+  float: left;
+}
+.shortpage>button:last-child {
+  float: right;
+}
+#pagination>a, #pagination>b {
+  display: inline-block;
+  padding: 4px;
+}
