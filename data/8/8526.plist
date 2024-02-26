@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12E55</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>NAVIGON</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>MKDirectionsRequest</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.maps.directionsrequest</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>NAVIGON targets</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.navigon.target</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>NAVIGON favourites</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.navigon.favourites</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>NAVIGON</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon60</string>
+				<string>Icon</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon76</string>
+				<string>Icon72</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.navigon.NavigonBrazil</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>NAVIGON</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.6.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.navigon.navigon</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>navigon</string>
+				<string>com.navigon.NavigonBrazil</string>
+				<string>navigonBRA</string>
+				<string>fb217241711751442</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2.6.1</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>11A465</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>7.0</string>
+	<key>DTSDKBuild</key>
+	<string>11A465</string>
+	<key>DTSDKName</key>
+	<string>iphoneos7.0</string>
+	<key>DTXcode</key>
+	<string>0500</string>
+	<key>DTXcodeBuild</key>
+	<string>5A1412</string>
+	<key>FacebookAppID</key>
+	<string>217241711751442</string>
+	<key>IsFlincSupported</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModeOther</string>
+		<string>MKDirectionsModePedestrian</string>
+		<string>MKDirectionsModeFerry</string>
+		<string>MKDirectionsModeCar</string>
+		<string>MKDirectionsModeBike</string>
+	</array>
+	<key>MNAllowedMapSets</key>
+	<array>
+		<string>MN7_MAPSET_SAM_BRA</string>
+	</array>
+	<key>MNBuildNumber</key>
+	<string>87</string>
+	<key>MNBuildTime</key>
+	<string>130925_141455</string>
+	<key>MNClientType</key>
+	<string>APPLE_SAM_IPHONE</string>
+	<key>MNClientVersion</key>
+	<string>2.6.1</string>
+	<key>MNCredits</key>
+	<string>Andi G, Andrej K, Angela O, Bernd T, Christian M, Edvard A, Eva D, Dominik H, Frieder D, Gabriel W, Gerhard M, Gerret V, Holger B, Jörn W, Johan-Till B, Johannes A, Marcus R, Markus W, Martin K, Nick K, Razvan G, Sanja S &amp; Stefan G</string>
+	<key>MNDeviceIdPrefix</key>
+	<string>JV</string>
+	<key>MNDisableLS</key>
+	<false/>
+	<key>MNDisableTTS</key>
+	<false/>
+	<key>MNMapInfoString</key>
+	<string>IPHONE_MAP_BRA</string>
+	<key>MNPanoramaRegion</key>
+	<string>SAM-BRA</string>
+	<key>MNProductInfoAppName</key>
+	<string>NAVIGON</string>
+	<key>MNProductInfoRegionName</key>
+	<string>Brazil</string>
+	<key>MNSoftwareInformation</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Navigation software:</string>
+			<key>Value</key>
+			<string>Garmin Würzburg GmbH, Copyright © 2013</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Map data:</string>
+			<key>Value</key>
+			<string>NAVTEQ, Copyright © 2013</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Text-to-Speech technology:</string>
+			<key>Value</key>
+			<string>Nuance Inc., Copyright © 2013</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Glympse Service:</string>
+			<key>Value</key>
+			<string>Copyright © 2007-2013 Glympse, Inc. Glympse and the Glympse logos are registered trademarks of Glympse, Inc. All rights reserved. Patents pending.</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>iPad SplitView:</string>
+			<key>Value</key>
+			<string>includes "MGSplitViewController" code by Matt Gemmell (http://mattgemmell.com)</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Google Protocol Buffers:</string>
+			<key>Value</key>
+			<string>Copyright © 2008 Google Inc. All rights reserved. http://code.google.com/p/protobuf/</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>
+All trademarks used are the property of their respective owners. We are not
+responsible for errors and misprints.</string>
+			<key>Value</key>
+			<string>We reserve the right to make design and technical changes.
+If you have any questions, please visit the Customer services area on our
+website at www.navigon.com</string>
+		</dict>
+	</array>
+	<key>MNSplashActivityIndicatorColor</key>
+	<string>ffffff</string>
+	<key>MNTeamMembers</key>
+	<string>Rene S, Andi K, Andreas M, Eva R, Bernd H, Volker K, Grzegorz P, Christian S, Daniel W, Julian C</string>
+	<key>MinimumOSVersion</key>
+	<string>5.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>(c) 2013 Garmin Würzburg GmbH</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>digital_7.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<false/>
+	<key>UILaunchImageFile</key>
+	<string>Default</string>
+	<key>UILaunchImages~ipad</key>
+	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default-Landscape</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Landscape</string>
+			<key>UILaunchImageSize</key>
+			<string>{768, 1024}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default-Portrait</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{768, 1024}</string>
+		</dict>
+	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
+	<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>com.garmin.hud</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>NAVIGON targets</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.navigon.target</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>target</string>
+				<key>public.mime-type</key>
+				<string>application/NAVIGON</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>NAVIGON favourites</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.navigon.favourites</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>favourites</string>
+				<key>public.mime-type</key>
+				<string>application/NAVIGONfavourites</string>
+			</dict>
+		</dict>
+	</array>
+	<key>tbdata</key>
+	<string>5E6B2F69265542595D56035306501D0201145005045103060509050701580153045C0405</string>
+</dict>
+</plist>
