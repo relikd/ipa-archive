@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Golf Rules</string>
+	<key>CFBundleExecutable</key>
+	<string>GolfRules</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.iphonewizard.iGolf</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>fr</string>
+		<string>de</string>
+		<string>es</string>
+		<string>it</string>
+		<string>sv</string>
+		<string>nl</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>GolfRules</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.22</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos2.2</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MMAppID</key>
+	<string>13ca32464f5f22c3</string>
+	<key>MinimumOSVersion</key>
+	<string>2.2</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+</dict>
+</plist>
