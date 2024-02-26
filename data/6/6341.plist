@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>11E53</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>NAVIGON</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>MKDirectionsRequest</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.maps.directionsrequest</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>NAVIGON</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon72.png</string>
+		<string>Icon@2x.png</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.navigon.NavigonMiddleEast</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>NAVIGON</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.2.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.navigon.navigon</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>navigon</string>
+				<string>navigonBHR</string>
+				<string>navigonJOR</string>
+				<string>navigonKWT</string>
+				<string>navigonOMN</string>
+				<string>navigonQAT</string>
+				<string>navigonSAU</string>
+				<string>navigonLBN</string>
+				<string>navigonARE</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2.2.0</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>10A403</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>6.0</string>
+	<key>DTSDKBuild</key>
+	<string>10A403</string>
+	<key>DTSDKName</key>
+	<string>iphoneos6.0</string>
+	<key>DTXcode</key>
+	<string>0450</string>
+	<key>DTXcodeBuild</key>
+	<string>4G182</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModeOther</string>
+		<string>MKDirectionsModePedestrian</string>
+		<string>MKDirectionsModeFerry</string>
+		<string>MKDirectionsModeCar</string>
+		<string>MKDirectionsModeBike</string>
+	</array>
+	<key>MNAllowedMapSets</key>
+	<array>
+		<string>MN7_MAPSET_MEA</string>
+	</array>
+	<key>MNBuildNumber</key>
+	<string>54</string>
+	<key>MNBuildTime</key>
+	<string>120914_154601</string>
+	<key>MNClientType</key>
+	<string>APPLE_MEA_IPHONE</string>
+	<key>MNClientVersion</key>
+	<string>2.2</string>
+	<key>MNCredits</key>
+	<string>Andi G, Andrej K, Angela O, Bernd T, Christian M, Edvard A, Dominik H, Gabriel W, Gerhard M, Gerret V, Holger B, Jörn W, Johan-Till B, Johannes A, Marcus R, Markus W, Martin K, Nick K, Razvan G, Sanja S &amp; Stefan G</string>
+	<key>MNDeviceIdPrefix</key>
+	<string>JX</string>
+	<key>MNDisableLS</key>
+	<true/>
+	<key>MNDisableTTS</key>
+	<true/>
+	<key>MNMapInfoString</key>
+	<string>IPHONE_MAP_MEA</string>
+	<key>MNPanoramaRegion</key>
+	<string>GCC</string>
+	<key>MNProductInfoAppName</key>
+	<string>NAVIGON</string>
+	<key>MNProductInfoRegionName</key>
+	<string>Middle East</string>
+	<key>MNSCRAvailable</key>
+	<false/>
+	<key>MNSoftwareInformation</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Navigation software:</string>
+			<key>Value</key>
+			<string>Garmin Würzburg GmbH, Copyright © 2012</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Map data:</string>
+			<key>Value</key>
+			<string>NAVTEQ, Copyright © 2012</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Text-to-Speech technology:</string>
+			<key>Value</key>
+			<string>Nuance Inc., Copyright © 2012</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Twitter integration and iPad SplitView:</string>
+			<key>Value</key>
+			<string>includes "MGTwitterEngine" and "MGSplitViewController" code by Matt Gemmell (http://mattgemmell.com)</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>
+All trademarks used are the property of their respective owners. We are not
+responsible for errors and misprints.</string>
+			<key>Value</key>
+			<string>We reserve the right to make design and technical changes.
+If you have any questions, please visit the Customer services area on our
+website at www.navigon.com</string>
+		</dict>
+	</array>
+	<key>MNSplashActivityIndicatorColor</key>
+	<string>ffffff</string>
+	<key>MNTeamMembers</key>
+	<string>Rene S, Andi K, Eva R, Bernd H, Volker K, Andreas M, Christian S, Daniel W, Frieder D</string>
+	<key>MinimumOSVersion</key>
+	<string>4.3</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>(c) 2012 Garmin Würzburg GmbH</string>
+	<key>NSMainNibFile</key>
+	<string>MainWindow</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>digital_7.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>location</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<false/>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	</array>
+	<key>dddd</key>
+	<string></string>
+</dict>
+</plist>
