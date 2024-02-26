@@ -260,6 +260,7 @@ function setPlistGen() {
         }
         plistGeneratorUrl = testURL;
         document.getElementById('overlay').hidden = true;
+        saveConfig();
     });
 }
 
