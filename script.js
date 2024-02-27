@@ -3,6 +3,7 @@ var DB_result = [];
 var baseUrls = {};
 var PER_PAGE = 30;
 var plistGeneratorUrl = ''; // will append ?d=<data>
+NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
 
 /*
  * Init
@@ -26,8 +27,9 @@ function loadFile(url, onErrFn, fn) {
 }
 
 function loadDB() {
+    var config = null;
     try {
-        loadConfig();
+        config = loadConfig(true);
     } catch (error) {
         alert(error);
     }
@@ -43,36 +45,35 @@ function loadDB() {
     });
 }
 
-function loadConfig() {
+function loadConfig(chkServer) {
     const params = location.hash.substring(1).split('&');
+    const data = {};
     params.forEach(function (param) {
         const pair = param.split('=', 2);
-        const key = pair[0];
-        const value = pair[1];
-        const input = document.getElementById(key);
-        if (input) {
-            if (input.type === 'checkbox') {
-                input.checked = value;
-            } else {
-                input.value = value;
-            }
-            if (key == 'plistServer') {
-                setPlistGen();
-            }
+        data[pair[0]] = decodeURIComponent(pair[1]);
+    });
+    document.querySelectorAll('input,select').forEach(function (input) {
+        if (input.type === 'checkbox') {
+            input.checked = data[input.id] || null;
+        } else {
+            input.value = data[input.id] || null;
         }
     });
+    if (chkServer && data['plistServer']) {
+        setPlistGen();
+    }
+    return data;
 }
 
 function saveConfig() {
     const data = [];
-    NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
     document.querySelectorAll('input,select').forEach(function (e) {
         const value = e.type === 'checkbox' ? e.checked : e.value;
         if (value) {
-            data.push(e.id + '=' + value);
+            data.push(e.id + '=' + encodeURIComponent(value));
         }
     });
-    this.location.hash = '#' + data.join('&');
+    location.hash = '#' + data.join('&');
 }
 
 /*
