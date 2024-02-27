@@ -210,7 +210,8 @@ function entriesToDict(entry) {
 }
 
 function entriesToStr(data) {
-    const template = document.getElementById('templates').querySelector('.entry').outerHTML;
+    const templateType = document.getElementById('unique').checked ? '.short' : '.entry';
+    const template = document.getElementById('templates').querySelector(templateType).outerHTML;
     var rv = '';
     for (var i = 0; i < data.length; i++) {
         const entry = entriesToDict(DB[data[i]]);

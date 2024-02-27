@@ -43,7 +43,7 @@ form input, form select, form button {
 
 /* IPA entry */
 h4 {
-  margin: 0;
+  margin: 0 0 8px;
 }
 .entry {
   display: inline-block;
@@ -56,13 +56,13 @@ h4 {
 .entry>div {
   display: inline-block;
   margin: 8px 8px 8px 0;
+  vertical-align: top;
 }
 .entry img {
   width: 74px;
   height: 74px;
-  margin: 8px;
+  margin: 0 8px 2px;
   border-radius: 17%;
-  vertical-align: top;
 }
 .entry button {
   display: block;

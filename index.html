@@ -31,18 +31,28 @@
 	</form>
 	<div id="content">JavaScript disabled?</div>
 	<div id="templates" hidden>
-		<div class="entry">
+		<div class="entry full">
 			<div>
 				<img src="$IMG">
 				<button onclick="installIpa($IDX)">Install</button>
 			</div>
 			<div class="info">
 				<h4>$TITLE</h4>
-				<div>BundleId: <a onclick="searchByBundleId(this)">$BUNDLEID</a></div>
+				<div>BundleId: $BUNDLEID</div>
 				<div>Version: v$VERSION – $SIZE</div>
 				<div>Device: $PLATFORM</div>
 				<div>Minimum OS: $MINOS</div>
 				<div>Link: <a href="$URL" rel="noopener noreferrer nofollow">$URLNAME</a></div>
+			</div>
+		</div>
+		<div class="entry short">
+			<div><img src="$IMG"></div>
+			<div class="info">
+				<h4>$TITLE</h4>
+				<div>BundleId: $BUNDLEID</div>
+				<div>Device: $PLATFORM</div>
+				<div>Minimum OS: $MINOS</div>
+				<div><a onclick="searchBundle($IDX)">Show all</a></div>
 			</div>
 		</div>
 	</div>
