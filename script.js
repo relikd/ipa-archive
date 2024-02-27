@@ -51,7 +51,11 @@ function loadConfig() {
         const value = pair[1];
         const input = document.getElementById(key);
         if (input) {
-            input.value = value;
+            if (input.type === 'checkbox') {
+                input.checked = value;
+            } else {
+                input.value = value;
+            }
             if (key == 'plistServer') {
                 setPlistGen();
             }
@@ -63,8 +67,9 @@ function saveConfig() {
     const data = [];
     NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
     document.querySelectorAll('input,select').forEach(function (e) {
-        if (e.value) {
-            data.push(e.id + '=' + e.value);
+        const value = e.type === 'checkbox' ? e.checked : e.value;
+        if (value) {
+            data.push(e.id + '=' + value);
         }
     });
     this.location.hash = '#' + data.join('&');
@@ -77,6 +82,7 @@ function saveConfig() {
 function applySearch() {
     const term = document.getElementById('search').value.trim().toLowerCase();
     const bundle = document.getElementById('bundleid').value.trim().toLowerCase();
+    const unique = document.getElementById('unique').checked;
     const minos = document.getElementById('minos').value;
     const maxos = document.getElementById('maxos').value;
     const platform = document.getElementById('device').value;
@@ -89,6 +95,7 @@ function applySearch() {
     // [7, 2,20200,"180","com.headcasegames.180","1.0",1,"180.ipa", 189930], 
     // [pk, platform, minOS, title, bundleId, version, baseUrl, pathName, size]
     DB_result = [];
+    const uniqueBundleIds = {};
     DB.forEach(function (ipa, i) {
         if (ipa[2] < minV || ipa[2] > maxV || !(ipa[1] & device)) {
             return;
@@ -101,13 +108,22 @@ function applySearch() {
             || ipa[4].toLowerCase().indexOf(term) > -1
             || ipa[7].toLowerCase().indexOf(term) > -1
         ) {
+            if (unique) {
+                const bId = ipa[4];
+                if (uniqueBundleIds[bId]) {
+                    return;
+                }
+                uniqueBundleIds[bId] = true;
+            }
             DB_result.push(i);
         }
     });
+    delete uniqueBundleIds; // free up memory
 }
 
 function searchByBundleId(sender) {
     document.getElementById('bundleid').value = sender.innerText;
+    document.getElementById('unique').checked = false;
     searchIPA();
 }
 
