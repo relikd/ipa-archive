@@ -123,6 +123,7 @@ function applySearch() {
 
 function searchByBundleId(sender) {
     document.getElementById('bundleid').value = sender.innerText;
+    document.getElementById('search').value = '';
     document.getElementById('unique').checked = false;
     searchIPA();
 }
