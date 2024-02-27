@@ -2,6 +2,7 @@ var DB = [];
 var DB_result = [];
 var baseUrls = {};
 var PER_PAGE = 30;
+var previousSearch = '';
 var plistGeneratorUrl = ''; // will append ?d=<data>
 NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
 
@@ -125,8 +126,16 @@ function applySearch() {
     delete uniqueBundleIds; // free up memory
 }
 
-function searchByBundleId(sender) {
-    document.getElementById('bundleid').value = sender.innerText;
+function restoreSearch() {
+    location.hash = previousSearch;
+    loadConfig(false);
+    previousSearch = '';
+    searchIPA(true);
+}
+
+function searchBundle(idx) {
+    previousSearch = location.hash;
+    document.getElementById('bundleid').value = DB[idx][4];
     document.getElementById('search').value = '';
     document.getElementById('page').value = null;
     document.getElementById('unique').checked = false;
@@ -224,7 +233,11 @@ function printIPA(offset) {
     if (!offset) { offset = 0; }
 
     const total = DB_result.length;
-    var content = '<p>Results: ' + total + '</p>';
+    var content = '<p>Results: ' + total;
+    if (previousSearch) {
+        content += ' -- Go to: <a onclick="restoreSearch()">previous search</a>';
+    }
+    content += '<p>';
     const page = Math.floor(offset / PER_PAGE);
     const pages = Math.ceil(total / PER_PAGE);
     if (pages > 1) {
