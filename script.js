@@ -39,8 +39,11 @@ function loadDB() {
         setMessage('Loading database ...');
         loadFile('data/ipa.json', setMessage, function (data) {
             DB = JSON.parse(data);
-            setMessage(DB.length);
             setMessage('ready. Links in database: ' + DB.length);
+            setMessage(config);
+            if (config && config.page > 0) {
+                searchIPA(true);
+            }
         });
     });
 }
