@@ -124,13 +124,18 @@ function applySearch() {
 function searchByBundleId(sender) {
     document.getElementById('bundleid').value = sender.innerText;
     document.getElementById('search').value = '';
+    document.getElementById('page').value = null;
     document.getElementById('unique').checked = false;
     searchIPA();
 }
 
-function searchIPA() {
+function searchIPA(restorePage) {
+    var page = 0;
+    if (restorePage) {
+        page = document.getElementById('page').value;
+    }
     applySearch();
-    printIPA();
+    printIPA((page || 0) * PER_PAGE);
     saveConfig();
 }
 
@@ -237,6 +242,8 @@ function printIPA(offset) {
 
 function p(page) {
     printIPA(page * PER_PAGE);
+    document.getElementById('page').value = page || null;
+    saveConfig();
 }
 
 function paginationShort(page, pages) {
