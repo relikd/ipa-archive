@@ -309,6 +309,10 @@ function urlWithSlash(url) {
     return url.toString().slice(-1) === '/' ? url : (url + '/');
 }
 
+function utoa(data) {
+    return btoa(unescape(encodeURIComponent(data)));
+  }
+
 function installIpa(idx) {
     if (!plistGeneratorUrl) {
         document.getElementById('overlay').hidden = false;
@@ -316,16 +320,23 @@ function installIpa(idx) {
     }
     const thisServerUrl = location.href.replace(location.hash, '');
     const entry = entriesToDict(DB[idx]);
-    var b64 = btoa(JSON.stringify({
+    const json = JSON.stringify({
         u: validUrl(entry.ipa_url),
         n: entry.title,
         b: entry.bundleId,
         v: entry.version.split(' ')[0],
         i: urlWithSlash(thisServerUrl) + entry.img_url,
-    }, null, 0));
+    }, null, 0)
+    var b64 = '';
+    try {
+        b64 = btoa(json);
+    } catch (error) {
+        b64 = utoa(json);
+    }
     while (b64.slice(-1) === '=') {
         b64 = b64.slice(0, -1);
     }
+    // window.open(plistGeneratorUrl + '?d=' + b64);
     const plistUrl = plistGeneratorUrl + '%3Fd%3D' + b64; // url encoded "?d="
     window.open('itms-services://?action=download-manifest&url=' + plistUrl);
 }

@@ -27,7 +27,6 @@ class PlistServer(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             b64 = self.path.split('?d=')[-1] + '=='
-            print(b64decode(b64))
             data = json.loads(b64decode(b64))  # type: dict
             rv = generatePlist(data)
         except Exception as e:
