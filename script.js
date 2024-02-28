@@ -41,7 +41,7 @@ function loadDB() {
         loadFile('data/ipa.json', setMessage, function (data) {
             DB = JSON.parse(data);
             setMessage('ready. Links in database: ' + DB.length);
-            if (config && config.page > 0) {
+            if (config && (config.page > 0 || config.search || config.bundleId)) {
                 searchIPA(true);
             }
         });
@@ -145,6 +145,8 @@ function searchIPA(restorePage) {
     var page = 0;
     if (restorePage) {
         page = document.getElementById('page').value;
+    } else {
+        document.getElementById('page').value = null;
     }
     applySearch();
     printIPA((page || 0) * PER_PAGE);
