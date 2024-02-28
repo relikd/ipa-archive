@@ -172,9 +172,8 @@ function randomIPA() {
     output.innerHTML = entriesToStr('.single', [idx]);
 
     const iTunesUrl = 'http://itunes.apple.com/lookup?bundleId=' + entry.bundleId;
-    loadFile(iTunesUrl, setMessage, function (data) {
+    loadFile(iTunesUrl, console.error, function (data) {
         const obj = JSON.parse(data);
-        console.log(obj);
         if (!obj || obj.resultCount < 1) {
             return;
         }
