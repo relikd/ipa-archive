@@ -41,7 +41,7 @@ function loadDB() {
         loadFile('data/ipa.json', setMessage, function (data) {
             DB = JSON.parse(data);
             setMessage('ready. Links in database: ' + DB.length);
-            if (config && (config.page > 0 || config.search || config.bundleId)) {
+            if (config && (config.page > 0 || config.search || config.bundleid)) {
                 searchIPA(true);
             }
         });
@@ -59,7 +59,7 @@ function loadConfig(chkServer) {
         if (input.type === 'checkbox') {
             input.checked = data[input.id] || null;
         } else {
-            input.value = data[input.id] || null;
+            input.value = data[input.id] || '';
         }
     });
     if (chkServer && data['plistServer']) {
