@@ -104,7 +104,7 @@ function applySearch() {
         if (ipa[2] < minV || ipa[2] > maxV || !(ipa[1] & device)) {
             return;
         }
-        if (bundle && ipa[4].substring(0, lenBundle).toLowerCase() !== bundle) {
+        if (bundle && ipa[4].toLowerCase().indexOf(bundle) === -1) {
             return;
         }
         if (!term
