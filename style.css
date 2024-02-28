@@ -70,6 +70,29 @@ h4 {
   margin: 0 auto;
 }
 
+/* Single-item page */
+.single {
+  display: block;
+  width: unset;
+}
+.itunes {
+  max-width: 600px;
+  margin: 40px auto;
+}
+.carousel {
+  display: block;
+  overflow: auto;
+  max-height: 350px;
+  white-space: nowrap;
+}
+.carousel img {
+  max-height: 330px;
+  margin: 8px;
+}
+.itunes p {
+  white-space: break-spaces;
+}
+
 /* Pagination */
 .shortpage {
   text-align: center;

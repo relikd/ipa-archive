@@ -28,8 +28,11 @@
 				<option value="4">Watch</option>
 			</select></label>
 		<button type="submit">Search</button>
+		<button type="button" onclick="randomIPA()">Random</button>
 	</form>
+
 	<div id="content">JavaScript disabled?</div>
+
 	<div id="templates" hidden>
 		<div class="entry full">
 			<div>
@@ -55,7 +58,34 @@
 				<div><a onclick="searchBundle($IDX)">Show all</a></div>
 			</div>
 		</div>
+		<div class="entry single">
+			<div>
+				<img src="$IMG">
+				<button onclick="installIpa($IDX)">Install</button>
+			</div>
+			<div class="info">
+				<h4>$TITLE</h4>
+				<div>BundleId: $BUNDLEID</div>
+				<div>Version: v$VERSION – $SIZE</div>
+				<div>Device: $PLATFORM</div>
+				<div>Minimum OS: $MINOS</div>
+				<div>Link: <a href="$URL" rel="noopener noreferrer nofollow">$URLNAME</a></div>
+			</div>
+		</div>
+		<div class="itunes">
+			<h4>iTunes Info:</h4>
+			<div>Genre: $GENRES</div>
+			<div>Rating: $RATING</div>
+			<div>Advisory: $ADVISORY</div>
+			<br>
+			<div>Current Version: $VERSION (last update: $DATE)</div>
+			<div>Price: $PRICE</div>
+			<div>Link: <a href="$URL" rel="noopener noreferrer nofollow">iTunes</a></div>
+			<div>$IMG</div>
+			<p>$DESCRIPTION</p>
+		</div>
 	</div>
+
 	<div id="overlay" hidden>
 		<div id="installMsg">
 			<h3>Install on device</h3>
@@ -73,6 +103,7 @@
 			</form>
 		</div>
 	</div>
+
 	<script>loadDB()</script>
 </body>
 

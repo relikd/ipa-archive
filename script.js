@@ -94,7 +94,6 @@ function applySearch() {
     const minV = minos ? strToVersion(minos) : 0;
     const maxV = maxos ? strToVersion(maxos) : 9999999;
     const device = platform ? 1 << platform : 255; // all flags
-    const lenBundle = bundle.length;
 
     // [7, 2,20200,"180","com.headcasegames.180","1.0",1,"180.ipa", 189930], 
     // [pk, platform, minOS, title, bundleId, version, baseUrl, pathName, size]
@@ -154,6 +153,57 @@ function searchIPA(restorePage) {
 }
 
 /*
+ * Random IPA
+ */
+
+function urlsToImgs(list) {
+    var rv = '<div class="carousel">';
+    for (var i = 0; i < list.length; i++) {
+        const url = list[i];
+        rv += '<img src="' + url + '">';
+    }
+    return rv + '</div>';
+}
+
+function randomIPA() {
+    const idx = DB_result[Math.floor(Math.random() * DB_result.length)];
+    const entry = entryToDict(DB[idx]);
+    const output = document.getElementById('content');
+    output.innerHTML = entriesToStr('.single', [idx]);
+
+    const iTunesUrl = 'http://itunes.apple.com/lookup?bundleId=' + entry.bundleId;
+    loadFile(iTunesUrl, setMessage, function (data) {
+        const obj = JSON.parse(data);
+        console.log(obj);
+        if (!obj || obj.resultCount < 1) {
+            return;
+        }
+        const info = obj.results[0];
+        const imgs1 = info.screenshotUrls;
+        const imgs2 = info.ipadScreenshotUrls;
+
+        var imgStr = '';
+        if (imgs1 && imgs1.length > 0) {
+            imgStr += '<p>iPhone Screenshots:</p>' + urlsToImgs(imgs1);
+        }
+        if (imgs2 && imgs2.length > 0) {
+            imgStr += '<p>iPad Screenshots:</p>' + urlsToImgs(imgs2);
+        }
+
+        output.innerHTML += getTemplate('.itunes')
+            .replace('$VERSION', info.version)
+            .replace('$PRICE', info.formattedPrice)
+            .replace('$RATING', info.averageUserRating.toFixed(1))
+            .replace('$ADVISORY', info.contentAdvisoryRating)
+            .replace('$DATE', info.currentVersionReleaseDate)
+            .replace('$GENRES', (info.genres || []).join(', '))
+            .replace('$URL', info.trackViewUrl)
+            .replace('$IMG', imgStr)
+            .replace('$DESCRIPTION', info.description);
+    });
+}
+
+/*
  * Output
  */
 
@@ -189,11 +239,15 @@ function humanSize(size) {
     return size.toFixed(1) + ['kB', 'MB', 'GB'][sizeIndex];
 }
 
+function getTemplate(name) {
+    return document.getElementById('templates').querySelector(name).outerHTML;
+}
+
 function validUrl(url) {
     return encodeURI(url).replace('#', '%23').replace('?', '%3F');
 }
 
-function entriesToDict(entry) {
+function entryToDict(entry) {
     const pk = entry[0];
     return {
         pk: pk,
@@ -210,12 +264,11 @@ function entriesToDict(entry) {
     }
 }
 
-function entriesToStr(data) {
-    const templateType = document.getElementById('unique').checked ? '.short' : '.entry';
-    const template = document.getElementById('templates').querySelector(templateType).outerHTML;
+function entriesToStr(templateType, data) {
+    const template = getTemplate(templateType);
     var rv = '';
     for (var i = 0; i < data.length; i++) {
-        const entry = entriesToDict(DB[data[i]]);
+        const entry = entryToDict(DB[data[i]]);
         rv += template
             .replace('$IDX', data[i])
             .replace('$IMG', entry.img_url)
@@ -245,7 +298,10 @@ function printIPA(offset) {
     if (pages > 1) {
         content += paginationShort(page, pages);
     }
-    content += entriesToStr(DB_result.slice(offset, offset + PER_PAGE));
+
+    const templateType = document.getElementById('unique').checked ? '.short' : '.entry';
+    content += entriesToStr(templateType, DB_result.slice(offset, offset + PER_PAGE));
+
     if (pages > 1) {
         content += paginationShort(page, pages);
         content += paginationFull(page, pages);
@@ -313,7 +369,7 @@ function urlWithSlash(url) {
 
 function utoa(data) {
     return btoa(unescape(encodeURIComponent(data)));
-  }
+}
 
 function installIpa(idx) {
     if (!plistGeneratorUrl) {
@@ -321,7 +377,7 @@ function installIpa(idx) {
         return;
     }
     const thisServerUrl = location.href.replace(location.hash, '');
-    const entry = entriesToDict(DB[idx]);
+    const entry = entryToDict(DB[idx]);
     const json = JSON.stringify({
         u: validUrl(entry.ipa_url),
         n: entry.title,
