@@ -76,7 +76,9 @@ function saveConfig() {
             data.push(e.id + '=' + encodeURIComponent(value));
         }
     });
+    const prev = location.hash;
     location.hash = '#' + data.join('&');
+    return prev !== location.hash;
 }
 
 /*
@@ -166,7 +168,15 @@ function urlsToImgs(list) {
 }
 
 function randomIPA() {
-    const idx = DB_result[Math.floor(Math.random() * DB_result.length)];
+    if (saveConfig()) {
+        applySearch();
+    }
+    var idx = 0;
+    if (DB_result.length > 0) {
+        idx = DB_result[Math.floor(Math.random() * DB_result.length)];
+    } else {
+        idx = Math.floor(Math.random() * DB.length);
+    }
     const entry = entryToDict(DB[idx]);
     const output = document.getElementById('content');
     output.innerHTML = entriesToStr('.single', [idx]);
