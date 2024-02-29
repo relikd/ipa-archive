@@ -174,6 +174,8 @@ function urlsToImgs(list) {
 }
 
 function randomIPA(specificId) {
+    document.getElementById('search').value = '';
+    document.getElementById('bundleid').value = '';
     if (saveConfig() || isInitial || specificId) {
         applySearch();
     }
