@@ -130,13 +130,17 @@ function applySearch() {
 
 function restoreSearch() {
     location.hash = previousSearch;
-    loadConfig(false);
+    const conf = loadConfig(false);
     previousSearch = '';
-    searchIPA(true);
+    if (conf.random) {
+        randomIPA(conf.random);
+    } else {
+        searchIPA(true);
+    }
 }
 
-function searchBundle(idx) {
-    previousSearch = location.hash;
+function searchBundle(idx, additional) {
+    previousSearch = location.hash + (additional || '');
     document.getElementById('bundleid').value = DB[idx][4];
     document.getElementById('search').value = '';
     document.getElementById('page').value = null;
@@ -169,21 +173,27 @@ function urlsToImgs(list) {
     return rv + '</div>';
 }
 
-function randomIPA() {
-    if (isInitial || saveConfig()) {
+function randomIPA(specificId) {
+    if (saveConfig() || isInitial || specificId) {
         applySearch();
     }
-    var idx = 0;
-    if (DB_result.length > 0) {
-        idx = DB_result[Math.floor(Math.random() * DB_result.length)];
-    } else {
-        idx = Math.floor(Math.random() * DB.length);
+    var idx = specificId;
+    if (!specificId) {
+        if (DB_result.length > 0) {
+            idx = DB_result[Math.floor(Math.random() * DB_result.length)];
+        } else {
+            idx = Math.floor(Math.random() * DB.length);
+        }
     }
     const entry = entryToDict(DB[idx]);
     const output = document.getElementById('content');
-    output.innerHTML = entriesToStr('.single', [idx]);
+    output.innerHTML = entriesToStr('.full', [idx]);
+    output.firstElementChild.className += ' single';
+    output.firstElementChild.innerHTML += renderTemplate(getTemplate('.randomAllVer'), { $IDX: idx });
 
-    const iTunesUrl = 'http://itunes.apple.com/lookup?bundleId=' + entry.bundleId;
+    return;
+    // Append iTunes info to result
+    const iTunesUrl = 'https://itunes.apple.com/lookup?bundleId=' + entry.bundleId;
     loadFile(iTunesUrl, console.error, function (data) {
         const obj = JSON.parse(data);
         if (!obj || obj.resultCount < 1) {

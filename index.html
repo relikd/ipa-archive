@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+	<meta name="referrer" content="no-referrer">
 	<title>IPA Archive</title>
 	<link rel="shortcut icon" href="./favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -58,20 +59,6 @@
 				<div><a onclick="searchBundle($IDX)">Show all</a></div>
 			</div>
 		</div>
-		<div class="entry single">
-			<div>
-				<img src="$IMG">
-				<button onclick="installIpa($IDX)">Install</button>
-			</div>
-			<div class="info">
-				<h4>$TITLE</h4>
-				<div>BundleId: $BUNDLEID</div>
-				<div>Version: v$VERSION – $SIZE</div>
-				<div>Device: $PLATFORM</div>
-				<div>Minimum OS: $MINOS</div>
-				<div>Link: <a href="$URL" rel="noopener noreferrer nofollow">$URLNAME</a></div>
-			</div>
-		</div>
 		<div class="itunes">
 			<h4>iTunes Info:</h4>
 			<div>Genre: $GENRES</div>
@@ -85,6 +72,7 @@
 			<p>$DESCRIPTION</p>
 		</div>
 		<a class="screenshot" href="$URL" target="_blank"><img src="$URL"></a>
+		<p class="randomAllVer"> <a onclick="searchBundle($IDX, '&random=$IDX')">show all versions</a></p>
 	</div>
 
 	<div id="overlay" hidden>
