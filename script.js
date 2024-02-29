@@ -2,6 +2,7 @@ var DB = [];
 var DB_result = [];
 var baseUrls = {};
 var PER_PAGE = 30;
+var isInitial = true;
 var previousSearch = '';
 var plistGeneratorUrl = ''; // will append ?d=<data>
 NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
@@ -100,6 +101,7 @@ function applySearch() {
     // [7, 2,20200,"180","com.headcasegames.180","1.0",1,"180.ipa", 189930], 
     // [pk, platform, minOS, title, bundleId, version, baseUrl, pathName, size]
     DB_result = [];
+    isInitial = false;
     const uniqueBundleIds = {};
     DB.forEach(function (ipa, i) {
         if (ipa[2] < minV || ipa[2] > maxV || !(ipa[1] & device)) {
@@ -168,7 +170,7 @@ function urlsToImgs(list) {
 }
 
 function randomIPA() {
-    if (saveConfig()) {
+    if (isInitial || saveConfig()) {
         applySearch();
     }
     var idx = 0;
