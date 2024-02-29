@@ -87,7 +87,7 @@ function saveConfig() {
  */
 
 function applySearch() {
-    const term = document.getElementById('search').value.trim().toLowerCase();
+    const term = document.getElementById('search').value.toLowerCase();
     const bundle = document.getElementById('bundleid').value.trim().toLowerCase();
     const unique = document.getElementById('unique').checked;
     const minos = document.getElementById('minos').value;
