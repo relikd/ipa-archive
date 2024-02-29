@@ -73,7 +73,7 @@ h4 {
 /* Single-item page */
 .single {
   display: block;
-  width: unset;
+  width: initial;
 }
 .itunes {
   max-width: 600px;
@@ -90,7 +90,7 @@ h4 {
   margin: 8px;
 }
 .itunes p {
-  white-space: break-spaces;
+  white-space: pre-wrap;
 }
 
 /* Pagination */
