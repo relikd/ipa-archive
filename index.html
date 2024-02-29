@@ -8,11 +8,12 @@
 	<title>IPA Archive</title>
 	<link rel="shortcut icon" href="./favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-	<script src='script.js'></script>
 	<link rel="stylesheet" href="style.css">
+	<script src='script.js'></script>
 </head>
 
 <body>
+	<button style="float: right; margin: 0 16px" onclick="randomIPA()">Random</button>
 	<h1>IPA Archive</h1>
 	<form onsubmit="event.preventDefault(); searchIPA(); return false;" autocomplete="off">
 		<input id="page" hidden>
@@ -29,7 +30,6 @@
 				<option value="4">Watch</option>
 			</select></label>
 		<button type="submit">Search</button>
-		<button type="button" onclick="randomIPA()">Random</button>
 	</form>
 
 	<div id="content">JavaScript disabled?</div>

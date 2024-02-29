@@ -189,7 +189,7 @@ function randomIPA(specificId) {
     }
     const entry = entryToDict(DB[idx]);
     const output = document.getElementById('content');
-    output.innerHTML = entriesToStr('.full', [idx]);
+    output.innerHTML = '<h3>Random:</h3>' + entriesToStr('.full', [idx]);
     output.firstElementChild.className += ' single';
     output.innerHTML += renderTemplate(getTemplate('.randomAction'), { $IDX: idx });
 
@@ -317,11 +317,11 @@ function printIPA(offset) {
     if (!offset) { offset = 0; }
 
     const total = DB_result.length;
-    var content = '<p>Results: ' + total;
+    var content = '<h3>Results: ' + total;
     if (previousSearch) {
         content += ' -- Go to: <a onclick="restoreSearch()">previous search</a>';
     }
-    content += '<p>';
+    content += '</h3>';
     const page = Math.floor(offset / PER_PAGE);
     const pages = Math.ceil(total / PER_PAGE);
     if (pages > 1) {

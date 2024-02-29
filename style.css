@@ -76,8 +76,8 @@ h4 {
   width: initial;
 }
 .randomAction {
+  text-align: right;
   margin: 8px 20px;
-  float: right;
 }
 .randomAction button {
   margin-left: 8px;
