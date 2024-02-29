@@ -209,12 +209,13 @@ function randomIPA(specificId) {
         const info = obj.results[0];
         const imgs1 = info.screenshotUrls;
         const imgs2 = info.ipadScreenshotUrls;
+        const device = document.getElementById('device').value || 255;
 
         var imgStr = '';
-        if (imgs1 && imgs1.length > 0) {
+        if (imgs1 && imgs1.length > 0 && device & 1) {
             imgStr += '<p>iPhone Screenshots:</p>' + urlsToImgs(redirectUrl, imgs1);
         }
-        if (imgs2 && imgs2.length > 0) {
+        if (imgs2 && imgs2.length > 0 && device & 2) {
             imgStr += '<p>iPad Screenshots:</p>' + urlsToImgs(redirectUrl, imgs2);
         }
 

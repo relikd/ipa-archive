@@ -95,6 +95,8 @@ h4 {
 .carousel img {
   max-height: 330px;
   margin: 8px;
+  min-width: 100px;
+  min-height: 100px;
 }
 .itunes p {
   white-space: pre-wrap;
