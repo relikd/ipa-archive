@@ -38,7 +38,7 @@
 		<div class="entry full">
 			<div>
 				<img src="$IMG">
-				<button onclick="installIpa($IDX)">Install</button>
+				<button onclick="installIPA($IDX)">Install</button>
 			</div>
 			<div class="info">
 				<h4>$TITLE</h4>
@@ -71,11 +71,15 @@
 			<div>$IMG</div>
 			<p>$DESCRIPTION</p>
 		</div>
-		<a class="screenshot" href="$URL" target="_blank"><img src="$URL"></a>
+		<a class="screenshot" href="$REF" target="_blank"><img src="$URL"></a>
 		<div class="randomAction">
 			Actions:
 			<button onclick="searchBundle($IDX, '&random=$IDX')">Show all versions</button>
 			<button onclick="randomIPA()">Next Random</button>
+		</div>
+		<div class="no-itunes">
+			<p>iTunes search disabled. No plist server configured.</p>
+			<a onclick="installIPA()">Configure now</a>
 		</div>
 	</div>
 

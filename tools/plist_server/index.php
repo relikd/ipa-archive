@@ -1,9 +1,12 @@
 <?php
-$X = json_decode(base64_decode($_GET['d']));
 header('Access-Control-Allow-Origin: *');
-if ($X->u) {
-    header('Content-Type: application/xml');
-    echo '<?xml version="1.0" encoding="UTF-8"?>
+if ($_GET['r']) {
+    echo stream_get_contents(fopen($_GET['r'], "rb"));
+} elseif ($_GET['d']) {
+    $X = json_decode(base64_decode($_GET['d']));
+    if ($X->u) {
+        header('Content-Type: application/xml');
+        echo '<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict><key>items</key><array><dict><key>assets</key><array><dict>
 <key>kind</key><string>software-package</string>
@@ -18,7 +21,10 @@ if ($X->u) {
 <key>kind</key><string>software</string>
 <key>title</key><string>'.$X->n.'</string>
 </dict></dict></array></dict></plist>';
+    } else {
+        echo 'Parsing error.';
+    }
 } else {
-    echo 'Parsing error.';
+    echo 'Error.';
 }
 ?>

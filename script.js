@@ -4,7 +4,7 @@ var baseUrls = {};
 var PER_PAGE = 30;
 var isInitial = true;
 var previousSearch = '';
-var plistGeneratorUrl = ''; // will append ?d=<data>
+var plistServerUrl = ''; // will append ?d=<data>
 NodeList.prototype.forEach = Array.prototype.forEach; // fix for < iOS 9.3
 
 /*
@@ -164,11 +164,11 @@ function searchIPA(restorePage) {
  * Random IPA
  */
 
-function urlsToImgs(list) {
+function urlsToImgs(redirectUrl, list) {
     const template = getTemplate('.screenshot');
     var rv = '<div class="carousel">';
     for (var i = 0; i < list.length; i++) {
-        rv += renderTemplate(template, { $URL: list[i] });
+        rv += renderTemplate(template, { $REF: list[i], $URL: redirectUrl + list[i] });
     }
     return rv + '</div>';
 }
@@ -190,15 +190,20 @@ function randomIPA(specificId) {
     const entry = entryToDict(DB[idx]);
     const output = document.getElementById('content');
     output.innerHTML = '<h3>Random:</h3>' + entriesToStr('.full', [idx]);
-    output.firstElementChild.className += ' single';
+    output.lastElementChild.className += ' single';
     output.innerHTML += renderTemplate(getTemplate('.randomAction'), { $IDX: idx });
 
-    return;
+    if (!plistServerUrl) {
+        output.innerHTML += getTemplate('.no-itunes');
+        return;
+    }
     // Append iTunes info to result
+    const redirectUrl = plistServerUrl + '?r='
     const iTunesUrl = 'https://itunes.apple.com/lookup?bundleId=' + entry.bundleId;
-    loadFile(iTunesUrl, console.error, function (data) {
+    loadFile(redirectUrl + iTunesUrl, console.error, function (data) {
         const obj = JSON.parse(data);
         if (!obj || obj.resultCount < 1) {
+            output.innerHTML += '<p class="no-itunes">No iTunes results.</p>';
             return;
         }
         const info = obj.results[0];
@@ -207,10 +212,10 @@ function randomIPA(specificId) {
 
         var imgStr = '';
         if (imgs1 && imgs1.length > 0) {
-            imgStr += '<p>iPhone Screenshots:</p>' + urlsToImgs(imgs1);
+            imgStr += '<p>iPhone Screenshots:</p>' + urlsToImgs(redirectUrl, imgs1);
         }
         if (imgs2 && imgs2.length > 0) {
-            imgStr += '<p>iPad Screenshots:</p>' + urlsToImgs(imgs2);
+            imgStr += '<p>iPad Screenshots:</p>' + urlsToImgs(redirectUrl, imgs2);
         }
 
         output.innerHTML += renderTemplate(getTemplate('.itunes'), {
@@ -386,7 +391,7 @@ function setPlistGen() {
             alert('Server did not respond with a Plist file.');
             return;
         }
-        plistGeneratorUrl = testURL;
+        plistServerUrl = testURL;
         document.getElementById('overlay').hidden = true;
         saveConfig();
     });
@@ -400,8 +405,8 @@ function utoa(data) {
     return btoa(unescape(encodeURIComponent(data)));
 }
 
-function installIpa(idx) {
-    if (!plistGeneratorUrl) {
+function installIPA(idx) {
+    if (!plistServerUrl) {
         document.getElementById('overlay').hidden = false;
         return;
     }
@@ -423,7 +428,7 @@ function installIpa(idx) {
     while (b64.slice(-1) === '=') {
         b64 = b64.slice(0, -1);
     }
-    // window.open(plistGeneratorUrl + '?d=' + b64);
-    const plistUrl = plistGeneratorUrl + '%3Fd%3D' + b64; // url encoded "?d="
+    // window.open(plistServerUrl + '?d=' + b64);
+    const plistUrl = plistServerUrl + '%3Fd%3D' + b64; // url encoded "?d="
     window.open('itms-services://?action=download-manifest&url=' + plistUrl);
 }

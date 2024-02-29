@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.request import urlopen
 from base64 import b64decode
 import socket
 import json
@@ -24,20 +25,38 @@ def generatePlist(data: dict) -> str:
 
 
 class PlistServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        try:
-            b64 = self.path.split('?d=')[-1] + '=='
-            data = json.loads(b64decode(b64))  # type: dict
-            rv = generatePlist(data)
-        except Exception as e:
-            print(e)
-            rv = ''
+    def makeHeader(self, contentType):
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
-        if rv:
-            self.send_header('Content-type', 'application/xml')
+        if contentType:
+            self.send_header('Content-type', contentType)
         self.end_headers()
-        self.wfile.write(bytes(rv, 'utf-8') if rv else b'Parsing error')
+
+    def do_GET(self):
+        try:
+            action, value = self.path.split('?', 1)[-1].split('=', 1)
+            if action == 'r':
+                # http.client.HTTPResponse
+                with urlopen(value) as response:
+                    mimeType = response.headers.get('Content-Type')
+                    self.makeHeader(mimeType)
+
+                    while True:
+                        tmp = response.read(8096)
+                        if not tmp:
+                            break
+                        self.wfile.write(tmp)
+
+            elif action == 'd':
+                data = json.loads(b64decode(value + '=='))  # type: dict
+                rv = bytes(generatePlist(data), 'utf-8')
+                self.makeHeader('application/xml')
+                self.wfile.write(rv)
+
+            else:
+                return
+        except Exception as e:
+            print(e)
 
 
 def getLocalIp():
