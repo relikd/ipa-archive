@@ -75,6 +75,13 @@ h4 {
   display: block;
   width: initial;
 }
+.randomAction {
+  margin: 8px 20px;
+  float: right;
+}
+.randomAction button {
+  margin-left: 8px;
+}
 .itunes {
   max-width: 600px;
   margin: 40px auto;

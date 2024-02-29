@@ -191,7 +191,7 @@ function randomIPA(specificId) {
     const output = document.getElementById('content');
     output.innerHTML = entriesToStr('.full', [idx]);
     output.firstElementChild.className += ' single';
-    output.firstElementChild.innerHTML += renderTemplate(getTemplate('.randomAllVer'), { $IDX: idx });
+    output.innerHTML += renderTemplate(getTemplate('.randomAction'), { $IDX: idx });
 
     return;
     // Append iTunes info to result

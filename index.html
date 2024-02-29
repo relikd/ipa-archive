@@ -72,7 +72,11 @@
 			<p>$DESCRIPTION</p>
 		</div>
 		<a class="screenshot" href="$URL" target="_blank"><img src="$URL"></a>
-		<p class="randomAllVer"> <a onclick="searchBundle($IDX, '&random=$IDX')">show all versions</a></p>
+		<div class="randomAction">
+			Actions:
+			<button onclick="searchBundle($IDX, '&random=$IDX')">Show all versions</button>
+			<button onclick="randomIPA()">Next Random</button>
+		</div>
 	</div>
 
 	<div id="overlay" hidden>
