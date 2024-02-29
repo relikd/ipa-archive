@@ -161,10 +161,10 @@ function searchIPA(restorePage) {
  */
 
 function urlsToImgs(list) {
+    const template = getTemplate('.screenshot');
     var rv = '<div class="carousel">';
     for (var i = 0; i < list.length; i++) {
-        const url = list[i];
-        rv += '<img src="' + url + '">';
+        rv += renderTemplate(template, { $URL: list[i] });
     }
     return rv + '</div>';
 }
@@ -201,16 +201,17 @@ function randomIPA() {
             imgStr += '<p>iPad Screenshots:</p>' + urlsToImgs(imgs2);
         }
 
-        output.innerHTML += getTemplate('.itunes')
-            .replace('$VERSION', info.version)
-            .replace('$PRICE', info.formattedPrice)
-            .replace('$RATING', info.averageUserRating.toFixed(1))
-            .replace('$ADVISORY', info.contentAdvisoryRating)
-            .replace('$DATE', info.currentVersionReleaseDate)
-            .replace('$GENRES', (info.genres || []).join(', '))
-            .replace('$URL', info.trackViewUrl)
-            .replace('$IMG', imgStr)
-            .replace('$DESCRIPTION', info.description);
+        output.innerHTML += renderTemplate(getTemplate('.itunes'), {
+            $VERSION: info.version,
+            $PRICE: info.formattedPrice,
+            $RATING: info.averageUserRating.toFixed(1),
+            $ADVISORY: info.contentAdvisoryRating,
+            $DATE: info.currentVersionReleaseDate,
+            $GENRES: (info.genres || []).join(', '),
+            $URL: info.trackViewUrl,
+            $IMG: imgStr,
+            $DESCRIPTION: info.description,
+        });
     });
 }
 
@@ -254,6 +255,10 @@ function getTemplate(name) {
     return document.getElementById('templates').querySelector(name).outerHTML;
 }
 
+function renderTemplate(template, values) {
+    return template.replace(/\$[A-Z]+/g, function (x) { return values[x]; });
+}
+
 function validUrl(url) {
     return encodeURI(url).replace('#', '%23').replace('?', '%3F');
 }
@@ -280,17 +285,18 @@ function entriesToStr(templateType, data) {
     var rv = '';
     for (var i = 0; i < data.length; i++) {
         const entry = entryToDict(DB[data[i]]);
-        rv += template
-            .replace('$IDX', data[i])
-            .replace('$IMG', entry.img_url)
-            .replace('$TITLE', (entry.title || '?').replace('<', '&lt;'))
-            .replace('$VERSION', entry.version)
-            .replace('$BUNDLEID', entry.bundleId)
-            .replace('$MINOS', versionToStr(entry.minOS))
-            .replace('$PLATFORM', platformToStr(entry.platform))
-            .replace('$SIZE', humanSize(entry.size))
-            .replace('$URLNAME', entry.pathName.split('/').slice(-1)) // decodeURI
-            .replace('$URL', validUrl(entry.ipa_url));
+        rv += renderTemplate(template, {
+            $IDX: data[i],
+            $IMG: entry.img_url,
+            $TITLE: (entry.title || '?').replace('<', '&lt;'),
+            $VERSION: entry.version,
+            $BUNDLEID: entry.bundleId,
+            $MINOS: versionToStr(entry.minOS),
+            $PLATFORM: platformToStr(entry.platform),
+            $SIZE: humanSize(entry.size),
+            $URLNAME: entry.pathName.split('/').slice(-1), // decodeURI
+            $URL: validUrl(entry.ipa_url),
+        });
     }
     return rv;
 }
