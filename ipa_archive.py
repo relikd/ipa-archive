@@ -422,9 +422,7 @@ def loadIpa(uid: int, url: str, *,
         if not artwork and app_name and plist_path.exists():
             with open(plist_path, 'rb') as fp:
                 icon_names = iconNameFromPlist(plistlib.load(fp))
-                print(icon_names)
                 icon = expandImageName(zip_listing, app_name, icon_names)
-                print(icon)
                 if icon:
                     extractZipEntry(zip, icon, img_path)
 
