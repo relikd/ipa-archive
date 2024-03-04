@@ -212,9 +212,9 @@ class CacheDB:
         return x.fetchone()[0]
 
     def getPendingQueue(self, *, done: int, batchsize: int) \
-            -> 'list[tuple[int, str]]':
-        x = self._db.execute('''SELECT idx.pk,
-            url || "/" || REPLACE(REPLACE(path_name, '#', '%23'), '?', '%3F')
+            -> 'list[tuple[int, str, str]]':
+        # url || "/" || REPLACE(REPLACE(path_name, '#', '%23'), '?', '%3F')
+        x = self._db.execute('''SELECT idx.pk, url, path_name
             FROM idx INNER JOIN urls ON urls.pk=base_url
             WHERE done=? LIMIT ?;''', [done, batchsize])
         return x.fetchall()
@@ -359,12 +359,14 @@ def processPending():
     if err_count > 0:
         print()
         print('URLs with Error:', err_count)
-        for uid, url in DB.getPendingQueue(done=3, batchsize=10):
-            print(f' - [{uid}] {url}')
+        for uid, base, path_name in DB.getPendingQueue(done=3, batchsize=10):
+            print(f' - [{uid}] {base}/{quote(path_name)}')
 
 
-def procSinglePending(processed: int, pending: int, uid: int, url: str) \
-        -> 'tuple[int, bool]':
+def procSinglePending(
+    processed: int, pending: int, uid: int, base_url: str, path_name
+) -> 'tuple[int, bool]':
+    url = base_url + '/' + quote(path_name)
     humanUrl = url.split('archive.org/download/')[-1]
     print(f'[{processed}|{pending} queued]: load[{uid}] {humanUrl}')
     try:
