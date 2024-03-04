@@ -266,12 +266,11 @@ class CacheDB:
 
         bundleId = plist.get('CFBundleIdentifier')
         title = plist.get('CFBundleDisplayName') or plist.get('CFBundleName')
-        version = str(plist.get('CFBundleVersion', ''))
         v_short = str(plist.get('CFBundleShortVersionString', ''))
-        if not version:
-            version = v_short
-        if version != v_short and v_short:
-            version = f'{version} ({v_short})'
+        v_long = str(plist.get('CFBundleVersion', ''))
+        version = v_short or v_long
+        if version != v_long and v_long:
+            version += f' ({v_long})'
         minOS = [int(x) for x in plist.get('MinimumOSVersion', '0').split('.')]
         minOS += [0, 0, 0]  # ensures at least 3 components are given
         platforms = sum(1 << int(x) for x in plist.get('UIDeviceFamily', []))
