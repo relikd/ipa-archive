@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>DTCompiler</key>
+    <string>com.apple.compilers.llvm.clang.1_0</string>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>DTPlatformVersion</key>
+    <string>9.0</string>
+    <key>NSUserActivityTypes</key>
+    <array>
+      <string>com.brainpop.brainpopfeaturedmovie.activitytype.launchfeaturedmovie</string>
+    </array>
+    <key>DTSDKName</key>
+    <string>iphoneos9.0</string>
+    <key>CFBundleName</key>
+    <string>BrainPOP</string>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
+    <key>CFBundleIcons</key>
+    <dict>
+      <key>CFBundlePrimaryIcon</key>
+      <dict>
+        <key>CFBundleIconFiles</key>
+        <array>
+          <string>US App Icons29x29</string>
+          <string>US App Icons40x40</string>
+          <string>US App Icons57x57</string>
+          <string>US App Icons60x60</string>
+        </array>
+      </dict>
+    </dict>
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleBlackTranslucent</string>
+    <key>LSApplicationCategoryType</key>
+    <string></string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>CFBundleDisplayName</key>
+    <string>BrainPOP</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>fetch</string>
+    </array>
+    <key>DTSDKBuild</key>
+    <string>13A340</string>
+    <key>CFBundleShortVersionString</key>
+    <string>3.1.1</string>
+    <key>CFBundleSupportedPlatforms</key>
+    <array>
+      <string>iPhoneOS</string>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>BuildMachineOSBuild</key>
+    <string>14E46</string>
+    <key>DTPlatformBuild</key>
+    <string>13A340</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>DTXcodeBuild</key>
+    <string>7A220</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>INTBD___.ttf</string>
+      <string>INTBDCN_.ttf</string>
+      <string>INTBL___.ttf</string>
+      <string>INTBLCM_.ttf</string>
+      <string>INTBLCN_.ttf</string>
+    </array>
+    <key>CFBundleVersion</key>
+    <string>3.1.1.16</string>
+    <key>MinimumOSVersion</key>
+    <string>6.0</string>
+    <key>UIStatusBarHidden</key>
+    <true/>
+    <key>UIDeviceFamily</key>
+    <array>
+      <integer>1</integer>
+      <integer>2</integer>
+    </array>
+    <key>UIApplicationExitsOnSuspend</key>
+    <false/>
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+    </array>
+    <key>CFBundleIdentifier</key>
+    <string>com.brainpop.brainpopfeaturedmovie</string>
+    <key>DTXcode</key>
+    <string>0700</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
+    <key>CFBundleExecutable</key>
+    <string>BrainPOP</string>
+    <key>CFBundleIcons~ipad</key>
+    <dict>
+      <key>CFBundlePrimaryIcon</key>
+      <dict>
+        <key>CFBundleIconFiles</key>
+        <array>
+          <string>US App Icons29x29</string>
+          <string>US App Icons40x40</string>
+          <string>US App Icons57x57</string>
+          <string>US App Icons60x60</string>
+          <string>US App Icons50x50</string>
+          <string>US App Icons72x72</string>
+          <string>US App Icons76x76</string>
+        </array>
+      </dict>
+    </dict>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>DTPlatformName</key>
+    <string>iphoneos</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLName</key>
+        <string>com.brainpop.brainpopfeaturedmovie</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>brainpop</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+</plist>

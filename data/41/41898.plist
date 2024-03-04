@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>UIApplicationShortcutItems</key>
+    <array>
+      <dict>
+        <key>UIApplicationShortcutItemType</key>
+        <string>com.roosterteeth.roosterteeth.watchlist</string>
+        <key>UIApplicationShortcutItemIconFile</key>
+        <string>3D_icon_watchlist</string>
+        <key>UIApplicationShortcutItemTitle</key>
+        <string>Watchlist</string>
+      </dict>
+      <dict>
+        <key>UIApplicationShortcutItemType</key>
+        <string>com.roosterteeth.roosterteeth.search</string>
+        <key>UIApplicationShortcutItemIconFile</key>
+        <string>3D_icon_search</string>
+        <key>UIApplicationShortcutItemTitle</key>
+        <string>Search Shows</string>
+      </dict>
+    </array>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Rooster Teeth uses Bluetooth to discover nearby Cast devices.</string>
+    <key>UILaunchStoryboardName</key>
+    <string>Launch Screen</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Rooster Teeth requires access to the location in order to inform you of relevant new contents.</string>
+    <key>DTPlatformVersion</key>
+    <string>12.4</string>
+    <key>DTSDKBuild</key>
+    <string>16G73</string>
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleLightContent</string>
+    <key>CFBundleIcons~ipad</key>
+    <dict>
+      <key>CFBundlePrimaryIcon</key>
+      <dict>
+        <key>CFBundleIconFiles</key>
+        <array>
+          <string>AppIcon20x20</string>
+          <string>AppIcon29x29</string>
+          <string>AppIcon40x40</string>
+          <string>AppIcon60x60</string>
+          <string>AppIcon76x76</string>
+          <string>AppIcon83.5x83.5</string>
+        </array>
+        <key>CFBundleIconName</key>
+        <string>AppIcon</string>
+      </dict>
+    </dict>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>NSCameraUsageDescription</key>
+    <string>Rooster Teeth requires access to the camera to allow new profile pictures to be taken.</string>
+    <key>Appboy</key>
+    <dict>
+      <key>LogLevel</key>
+      <string>0</string>
+      <key>Endpoint</key>
+      <string>rastaban.iad-03.braze.com</string>
+    </dict>
+    <key>CFBundleDisplayName</key>
+    <string>Rooster Teeth</string>
+    <key>DTXcodeBuild</key>
+    <string>10G8</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.roosterteeth.roosterteeth</string>
+    <key>UIDeviceFamily</key>
+    <array>
+      <integer>1</integer>
+    </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+    </array>
+    <key>CFBundleIcons</key>
+    <dict>
+      <key>CFBundlePrimaryIcon</key>
+      <dict>
+        <key>CFBundleIconFiles</key>
+        <array>
+          <string>AppIcon20x20</string>
+          <string>AppIcon29x29</string>
+          <string>AppIcon40x40</string>
+          <string>AppIcon60x60</string>
+        </array>
+        <key>CFBundleIconName</key>
+        <string>AppIcon</string>
+      </dict>
+    </dict>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleSupportedPlatforms</key>
+    <array>
+      <string>iPhoneOS</string>
+    </array>
+    <key>UIRequiresFullScreen</key>
+    <true/>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <false/>
+    <key>MinimumOSVersion</key>
+    <string>10.0</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>Rooster Teeth needs bluetooth access to scan for nearby Cast devices.</string>
+    <key>CFBundleName</key>
+    <string>RoosterTeeth</string>
+    <key>CFBundleShortVersionString</key>
+    <string>3.6.0</string>
+    <key>FacebookAutoInitEnabled</key>
+    <false/>
+    <key>ReCaptchaDomain</key>
+    <string>https://roosterteeth.com</string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>Proxima Nova Bold.otf</string>
+      <string>Proxima Nova Semibold.otf</string>
+      <string>Proxima Nova Light It.otf</string>
+      <string>Proxima Nova Reg.otf</string>
+      <string>Proxima Nova Sbold It.otf</string>
+      <string>Proxima Nova Thin.otf</string>
+      <string>Gotham Book.otf</string>
+      <string>Gotham-Medium.otf</string>
+    </array>
+    <key>CFBundleExecutable</key>
+    <string>RoosterTeeth</string>
+    <key>UIBackgroundModes</key>
+    <array>
+      <string>audio</string>
+      <string>fetch</string>
+      <string>remote-notification</string>
+    </array>
+    <key>FacevbookDisplayName</key>
+    <string>Rooster Teeth</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+      <string>armv7</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <true/>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>FacebookAppID</key>
+    <string>120179524728527</string>
+    <key>BuildMachineOSBuild</key>
+    <string>18G84</string>
+    <key>DTPlatformName</key>
+    <string>iphoneos</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Provide enhanced ad experience.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Rooster Teeth requires access to the microphone to attach voice notes to bug reports.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Rooster Teeth requires access to the location in order to inform you of relevant new contents.</string>
+    <key>CFBundleVersion</key>
+    <string>97</string>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>DTCompiler</key>
+    <string>com.apple.compilers.llvm.clang.1_0</string>
+    <key>ReCaptchaKey</key>
+    <string>6LeZAyAUAAAAAKXhHLkm7QSka-pPFSRLgL7fjS_g</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.roosterteeth.roosterteeth</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>rt</string>
+          <string>fb120179524728527</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.449771067884-4p5lpj7ik4vmtlcj5c1bqh8tjt7cps0e</string>
+        </array>
+      </dict>
+    </array>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Rooster Teeth requires access to the location in order to inform you of relevant new contents.</string>
+    <key>DTSDKName</key>
+    <string>iphoneos12.4</string>
+    <key>Fabric</key>
+    <dict>
+      <key>Kits</key>
+      <array>
+        <dict>
+          <key>KitInfo</key>
+          <dict/>
+          <key>KitName</key>
+          <string>Crashlytics</string>
+        </dict>
+      </array>
+      <key>APIKey</key>
+      <string>a8eeb26c1dc5d961d5aa31763ed59fa7d9e66b30</string>
+    </dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoadsInWebContent</key>
+      <true/>
+    </dict>
+    <key>DTPlatformBuild</key>
+    <string>16G73</string>
+    <key>DTXcode</key>
+    <string>1030</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Rooster Teeth requires access to the photo library to attach images to bug reports and upload new profile pictures.</string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>DTAppStoreToolsBuild</key>
+    <string>11C29</string>
+    <key>UISupportedDevices</key>
+    <array>
+      <string>iPhone5,1</string>
+      <string>iPhone5,2</string>
+      <string>iPhone5,3</string>
+      <string>iPhone5,4</string>
+    </array>
+  </dict>
+</plist>

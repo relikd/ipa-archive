@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>10 Frame Fill</string>
+	<key>CFBundleBundleName</key>
+	<string>10 Frame Fill</string>
+	<key>CFBundleExecutable</key>
+	<string>10 Frame Fill</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.classroomFocusedSoftware.10FrameFill</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+		<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.classroomFocusedSoftware.10FrameFill</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>CFS10FrameFill</string>
+			</array>
+		</dict>
+	</array>
+	
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.5.1</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.5.1</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string><string>Icon-72.png</string><string>Icon-114.png</string><string>Icon-144.png</string><string>Icon-120.png</string><string>Icon-76.png</string><string>Icon-152.png</string>
+	</array>
+	<key>UILaunchImages</key>
+	<array>
+				<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 480}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default-568h</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 568}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>8.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default-Landscape</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Landscape</string>
+			<key>UILaunchImageSize</key>
+			<string>{768, 1024}</string>
+		</dict>
+
+	</array>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12B411</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>8.1</string>
+	<key>DTSDKBuild</key>
+	<string>12B411</string>
+	<key>DTSDKName</key>
+	<string>iphoneos8.1</string>
+	<key>DTXcode</key>
+	<string>0610</string>
+	<key>DTXcodeBuild</key>
+	<string>6A1052c</string>
+	<key>CFBundleDisplayName</key>
+		<string>10 Frame Fill</string>
+	<key>MinimumOSVersion</key>
+		<string>6.0.0</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer><integer>2</integer>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<dict>
+		
+	</dict>
+	<key>UIRequiresPersistentWiFi</key>
+		<false/>
+	<key>UIApplicationExitsOnSuspend</key>
+		<true/>
+	<key>UIInitialInterfaceOrientation</key>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIInitialInterfaceOrientation~ipad</key>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeRight</string><string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+		<false/>
+	<key>NSLocationAlwaysUsageDescription</key><string>This application requires access to Location Services always</string>
+	<key>UIStatusBarHidden</key>
+		<true/>
+	<key>UIStatusBarHidden~ipad</key>
+		<true/>
+	<key>UIStatusBarStyle</key>
+		<string>UIStatusBarStyleDefault</string>
+	<key>com_livecode_StatusBarSolid</key>
+		<false/>
+	<key>com_livecode_UsesLocalNotifications</key>
+		<false/>
+	<key>UIFileSharingEnabled</key>
+		<false/>
+	<key>UIPrerenderedIcon</key>
+		<false/>
+	<key>UIAppFonts</key>
+	<array>
+		
+	</array>
+</dict>
+</plist>
