@@ -50,6 +50,9 @@ function loadDB() {
 }
 
 function loadConfig(chkServer) {
+    if (!location.hash) {
+        return; // keep default values
+    }
     const params = location.hash.substring(1).split('&');
     const data = {};
     params.forEach(function (param) {
