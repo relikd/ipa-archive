@@ -520,6 +520,9 @@ def export_json():
     DB = CacheDB()
     url_map = DB.jsonUrlMap()
     maxUrlId = max(url_map.keys())
+    # just a visual separator
+    maxUrlId += 1
+    url_map[maxUrlId] = '---'
     submap = {}
     total = DB.count(done=1)
     with open(CACHE_DIR / 'ipa.json', 'w') as fp:
@@ -579,6 +582,8 @@ def diskPath(uid: int, ext: str) -> Path:
 
 
 def printProgress(blocknum, bs, size):
+    if size == 0:
+        return
     percent = (blocknum * bs) / size
     done = "#" * int(40 * percent)
     print(f'\r[{done:<40}] {percent:.1%}', end='')
