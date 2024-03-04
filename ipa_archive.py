@@ -44,6 +44,8 @@ def main():
     cmd.add_argument('-force', '-f', action='store_true',
                      help='Reindex local data / populate DB.'
                      'Make sure to export fsize before!')
+    cmd.add_argument('pk', metavar='PK', type=int,
+                     nargs='*', help='Primary key')
 
     cmd = cli.add_parser('export', help='Export data')
     cmd.add_argument('export_type', choices=['json', 'fsize'],
@@ -71,10 +73,17 @@ def main():
         print('done.')
 
     elif args.cmd == 'run':
-        if args.force:
-            print('Resetting done state ...')
-            CacheDB().setAllUndone(whereDone=1)
-        processPending()
+        DB = CacheDB()
+        if args.pk:
+            for pk in args.pk:
+                url = DB.getUrl(pk)
+                print(pk, ': process', url)
+                loadIpa(pk, url, overwrite=True)
+        else:
+            if args.force:
+                print('Resetting done state ...')
+                DB.setAllUndone(whereDone=1)
+            processPending()
 
     elif args.cmd == 'err':
         if args.err_type == 'reset':
