@@ -417,9 +417,11 @@ def loadIpa(uid: int, url: str, *,
         app_name = None
         artwork = False
         zip_listing = zip.infolist()
+        has_payload_folder = False
 
         for entry in zip_listing:
             fn = entry.filename.lstrip('/')
+            has_payload_folder |= fn.startswith('Payload/')
             plist_match = re_info_plist.match(fn)
             if fn == 'iTunesArtwork':
                 extractZipEntry(zip, entry, img_path)
@@ -428,6 +430,10 @@ def loadIpa(uid: int, url: str, *,
                 app_name = plist_match.group(1)
                 if not image_only:
                     extractZipEntry(zip, entry, plist_path)
+
+        if not has_payload_folder:
+            print(f'ERROR: [{uid}] ipa has no "Payload/" root folder',
+                  file=stderr)
 
         # if no iTunesArtwork found, load file referenced in plist
         if not artwork and app_name and plist_path.exists():
