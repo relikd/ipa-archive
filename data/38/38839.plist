@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>BuildMachineOSBuild</key>
+		<string>10K549</string>
+		<key>CFBundleDevelopmentRegion</key>
+		<string>English</string>
+		<key>CFBundleDisplayName</key>
+		<string>In Time The Game</string>
+		<key>CFBundleExecutable</key>
+		<string>UDKGame</string>
+		<key>CFBundleIconFiles</key>
+		<array>
+			<string>Icon.png</string>
+			<string>Icon@2x.png</string>
+			<string>Icon-72.png</string>
+		</array>
+		<key>CFBundleIdentifier</key>
+		<string>com.robomodo.InTimeGame</string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>CFBundleName</key>
+		<string>In Time TheGame</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+		<key>CFBundleResourceSpecification</key>
+		<string>CustomResourceRules.plist</string>
+		<key>CFBundleSignature</key>
+		<string>????</string>
+		<key>CFBundleSupportedPlatforms</key>
+		<array>
+			<string>iPhoneOS</string>
+		</array>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>fb261923193841830</string>
+				</array>
+			</dict>
+		</array>
+		<key>CFBundleVersion</key>
+		<string>9000.0</string>
+		<key>DTCompiler</key>
+		<string>4.2</string>
+		<key>DTPlatformBuild</key>
+		<string>8H7</string>
+		<key>DTPlatformName</key>
+		<string>iphoneos</string>
+		<key>DTPlatformVersion</key>
+		<string>4.3</string>
+		<key>DTSDKBuild</key>
+		<string>8H7</string>
+		<key>DTSDKName</key>
+		<string>iphoneos4.3</string>
+		<key>DTXcode</key>
+		<string>0402</string>
+		<key>DTXcodeBuild</key>
+		<string>4A2002a</string>
+		<key>EpicAppVersion</key>
+		<string>8623.86 01-09 17:25</string>
+		<key>EpicPackagingMode</key>
+		<string>Distribution</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true />
+		<key>MinimumOSVersion</key>
+		<string>3.1.3</string>
+		<key>UIDeviceFamily</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+		</array>
+		<key>UIFileSharingEnabled</key>
+		<false />
+		<key>UIInterfaceOrientation</key>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<key>UIRequiredDeviceCapabilities</key>
+		<array>
+			<string>armv7</string>
+			<string>opengles-2</string>
+		</array>
+		<key>UIStatusBarHidden</key>
+		<true />
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+		</array>
+		<key>UIPrerenderedIcon</key>
+		<true />
+	</dict>
+</plist>
