@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12F45</string>
+	<key>CBBuildInfo</key>
+	<dict>
+		<key>Branch</key>
+		<string>master</string>
+		<key>Branches</key>
+		<string>(HEAD, origin/master, origin/HEAD, master)</string>
+		<key>BuildDate</key>
+		<string>2014-01-15 15:53:11 -0000</string>
+		<key>BuildNumber</key>
+		<integer>1575</integer>
+		<key>BuildSHA</key>
+		<string>81a2edfe29061e03210b8c12f0ef94df068c8a5d</string>
+		<key>BuildShortSHA</key>
+		<string>81a2edf</string>
+		<key>BuilderName</key>
+		<string>wolfe</string>
+		<key>CommitDate</key>
+		<string>2014-01-15 10:48:09 -0500</string>
+		<key>Configuration</key>
+		<string>AppStore</string>
+		<key>FullVersion</key>
+		<string>3.8 (1575)</string>
+		<key>FullVersionDots</key>
+		<string>3.8.1575</string>
+		<key>FullVersionShaDots</key>
+		<string>3.8.1575.81a2edf</string>
+		<key>LocalBuildNumber</key>
+		<string>1575</string>
+		<key>LocalCommits</key>
+		<integer>0</integer>
+		<key>LocalUncommits</key>
+		<integer>0</integer>
+		<key>Target</key>
+		<string>calgary</string>
+		<key>VersionTag</key>
+		<string>3.8</string>
+		<key>VersionTagSHA</key>
+		<string>16a808490ef268a9a6103383224f4e9ea05c46d9</string>
+	</dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>YYC 311</string>
+	<key>CFBundleExecutable</key>
+	<string>Calgary 311</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon-Small</string>
+		<string>Icon-60</string>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>ca.calgary.calgary311</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Calgary 311</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.8.1575</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1575</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>11B508</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>7.0</string>
+	<key>DTSDKBuild</key>
+	<string>11B508</string>
+	<key>DTSDKName</key>
+	<string>iphoneos7.0</string>
+	<key>DTXcode</key>
+	<string>0502</string>
+	<key>DTXcodeBuild</key>
+	<string>5A3005</string>
+	<key>Icon file</key>
+	<string>Icon.png</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>5.0</string>
+	<key>SBUsesNetwork</key>
+	<true/>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UILaunchImages</key>
+	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default_ios7</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 568}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default_ios7</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 480}</string>
+		</dict>
+	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
