@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>NFS Shift</string>
+	<key>CFBundleExecutable</key>
+	<string>nfss_3d_iphone_ROW</string>
+	<key>CFBundleIconFile</key>
+	<string>Icon.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.ea.nfss.bv</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>fr_FR</string>
+		<string>it</string>
+		<string>de</string>
+		<string>es_ES</string>
+		<string>ja</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>nfss_3d_iphone_ROW</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>DLCPackId1</key>
+	<string>778838</string>
+	<key>DLCPackId2</key>
+	<string>778841</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTSDKName</key>
+	<string>iphoneos3.0</string>
+	<key>EADeviceID</key>
+	<string>1944</string>
+	<key>EAGLColorFormat</key>
+	<string>RGB565</string>
+	<key>EAGLRenderingAPI</key>
+	<string>OpenGLES2</string>
+	<key>EAHardwareID</key>
+	<string>9879</string>
+	<key>EAProductID</key>
+	<string>28902</string>
+	<key>EASellID</key>
+	<string>774537</string>
+	<key>EAServerURL</key>
+	<string>https://synergy.eamobile.com</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>2.2.1</string>
+	<key>MultiplayerVersion</key>
+	<string>2</string>
+	<key>MusicPlayer</key>
+	<string>iPod</string>
+	<key>SignerIdentity</key>
+	<string>Apple iPhone OS Application Signing</string>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+</dict>
+</plist>

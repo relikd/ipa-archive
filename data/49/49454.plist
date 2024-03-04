@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>11C74</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>CookingDashD</string>
+	<key>CFBundleExecutable</key>
+	<string>CookingDash</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.hip.266</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>de</string>
+		<string>es</string>
+		<string>fr</string>
+		<string>it</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>CookingDash</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleResourceSpecification</key>
+	<string>ResourceRules.plist</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>iPhoneOS</string>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>2.9.8</string>
+	<key>DTCompiler</key>
+	<string>4.2</string>
+	<key>DTPlatformBuild</key>
+	<string>8H7</string>
+	<key>DTPlatformName</key>
+	<string>iphoneos</string>
+	<key>DTPlatformVersion</key>
+	<string>4.3</string>
+	<key>DTSDKBuild</key>
+	<string>8H7</string>
+	<key>DTSDKName</key>
+	<string>iphoneos4.3</string>
+	<key>DTXcode</key>
+	<string>0410</string>
+	<key>DTXcodeBuild</key>
+	<string>4B110</string>
+	<key>Icon files</key>
+	<dict>
+		<key>Item 0</key>
+		<string>Icon.png</string>
+		<key>Item 1</key>
+		<string>Icon@2x.png</string>
+		<key>Item 2</key>
+		<string></string>
+		<key>Item 3</key>
+		<string></string>
+		<key>Item 4</key>
+		<string>Icon-Small.png</string>
+		<key>Item 5</key>
+		<string>Icon-Small@2x.png</string>
+	</dict>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>3.0</string>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UILaunchImageFile</key>
+	<string>Default.png</string>
+	<key>UILaunchImageFile~ipad</key>
+	<string>defaultipad.png</string>
+	<key>UILaunchImageFile~iphone</key>
+	<string>Default.png</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
