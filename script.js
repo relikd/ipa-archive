@@ -96,10 +96,12 @@ function applySearch() {
     const minos = document.getElementById('minos').value;
     const maxos = document.getElementById('maxos').value;
     const platform = document.getElementById('device').value;
+    const minid = document.getElementById('minid').value;
 
     const minV = minos ? strToVersion(minos) : 0;
     const maxV = maxos ? strToVersion(maxos) : 9999999;
     const device = platform ? 1 << platform : 255; // all flags
+    const minPK = minid ? parseInt(minid) : 0;
 
     // [7, 2,20200,"180","com.headcasegames.180","1.0",1,"180.ipa", 189930], 
     // [pk, platform, minOS, title, bundleId, version, baseUrl, pathName, size]
@@ -107,7 +109,7 @@ function applySearch() {
     isInitial = false;
     const uniqueBundleIds = {};
     DB.forEach(function (ipa, i) {
-        if (ipa[2] < minV || ipa[2] > maxV || !(ipa[1] & device)) {
+        if (ipa[2] < minV || ipa[2] > maxV || !(ipa[1] & device) || ipa[0] < minPK) {
             return;
         }
         if (bundle && ipa[4].toLowerCase().indexOf(bundle) === -1) {
