@@ -704,7 +704,7 @@ def export_json():
     for newurl, newidx in submap.items():
         url_map[newidx] = newurl
     with open(CACHE_DIR / 'urls.json', 'w') as fp:
-        fp.write(json.dumps(url_map, separators=(',\n', ':')))
+        fp.write(json.dumps(url_map, separators=(',\n', ':'), sort_keys=True))
     print(f'write urls.json: {len(url_map)} entries')
 
 
