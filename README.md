@@ -65,12 +65,6 @@ Similar commands exist on Linux and Windows.
 
 ## Development
 
-### TODO
-
-- Reindexing of previous URLs (should remove dead-links and add new ones)
-- Periodic check on outdated URLs (see previous)
-
-
 ### Requirements
 
 - `ipa_archive.py` has a dependency on [RemoteZip](https://github.com/gtsystem/python-remotezip) (`pip install remotezip`)
@@ -98,6 +92,13 @@ To add files to the archive follow these steps:
     - If unfixable, `python3 ipa_archive.py set err ID1 ID2` # mark ids done=4
 4. `./tools/image_optim.sh` (this will convert all .png files to .jpg)
 5. `python3 ipa_archive.py export json`
+
+
+To update:
+- `python3 ipa_archive.py update` # check all links (if not udpated recently)
+- `python3 ipa_archive.py update [url|base_url_id]`  # force update
+- Then run the same steps as after adding an url
+
 
 Userful helper:
 - `./tools/check_error_no_plist.sh` # checks that no plist exists for a done=4 entry

@@ -40,6 +40,9 @@ def main():
     cmd.add_argument('urls', metavar='URL', nargs='+',
                      help='Search URLs for .ipa links')
 
+    cmd = cli.add_parser('update', help='Update all urls')
+    cmd.add_argument('urls', metavar='URL', nargs='*', help='URLs or index')
+
     cmd = cli.add_parser('run', help='Download and process pending urls')
     cmd.add_argument('-force', '-f', action='store_true',
                      help='Reindex local data / populate DB.'
@@ -69,8 +72,17 @@ def main():
 
     if args.cmd == 'add':
         for url in args.urls:
-            crawler(url)
+            addNewUrl(url)
         print('done.')
+
+    elif args.cmd == 'update':
+        queue = args.urls or CacheDB().getUpdateUrlIds(sinceNow='-7 days')
+        if queue:
+            for i, url in enumerate(queue):
+                updateUrl(url, i + 1, len(queue))
+            print('done.')
+        else:
+            print('Nothing to do.')
 
     elif args.cmd == 'run':
         DB = CacheDB()
@@ -136,7 +148,8 @@ class CacheDB:
         self._db.execute('''
             CREATE TABLE IF NOT EXISTS urls(
                 pk INTEGER PRIMARY KEY,
-                url TEXT NOT NULL UNIQUE
+                url TEXT NOT NULL UNIQUE,
+                date INTEGER DEFAULT (strftime('%s','now'))
             );
         ''')
         self._db.execute('''
@@ -161,7 +174,31 @@ class CacheDB:
     def __del__(self) -> None:
         self._db.close()
 
-    # insert URLs
+    # Get URL
+
+    def getIdForBaseUrl(self, url: str) -> 'int|None':
+        x = self._db.execute('SELECT pk FROM urls WHERE url=?', [url])
+        row = x.fetchone()
+        return row[0] if row else None
+
+    def getBaseUrlForId(self, uid: int) -> 'str|None':
+        x = self._db.execute('SELECT url FROM urls WHERE pk=?', [uid])
+        row = x.fetchone()
+        return row[0] if row else None
+
+    def getId(self, baseUrlId: int, pathName: str) -> 'int|None':
+        x = self._db.execute('''SELECT pk FROM idx
+            WHERE base_url=? AND path_name=?;''', [baseUrlId, pathName])
+        row = x.fetchone()
+        return row[0] if row else None
+
+    def getUrl(self, uid: int) -> str:
+        x = self._db.execute('''SELECT url, path_name FROM idx
+            INNER JOIN urls ON urls.pk=base_url WHERE idx.pk=?;''', [uid])
+        base, path = x.fetchone()
+        return base + '/' + quote(path)
+
+    # Insert URL
 
     def insertBaseUrl(self, base: str) -> int:
         try:
@@ -172,18 +209,42 @@ class CacheDB:
             x = self._db.execute('SELECT pk FROM urls WHERE url = ?;', [base])
             return x.fetchone()[0]
 
-    def insertIpaUrls(self, entries: 'Iterable[tuple[int, str, int]]') -> int:
+    def insertIpaUrls(
+        self, baseUrlId: int, entries: 'Iterable[tuple[str, int, str]]'
+    ) -> int:
+        ''' :entries: must be iterable of `(path_name, filesize, crc32)` '''
         self._db.executemany('''
         INSERT OR IGNORE INTO idx (base_url, path_name, fsize) VALUES (?,?,?);
-        ''', entries)
+        ''', ((baseUrlId, path, size) for path, size, _crc in entries))
         self._db.commit()
         return self._db.total_changes
 
-    def getUrl(self, uid: int) -> str:
-        x = self._db.execute('''SELECT url, path_name FROM idx
-            INNER JOIN urls ON urls.pk=base_url WHERE idx.pk=?;''', [uid])
-        base, path = x.fetchone()
-        return base + '/' + quote(path)
+    # Update URL
+
+    def getUpdateUrlIds(self, *, sinceNow: str) -> 'list[int]':
+        x = self._db.execute('''SELECT pk FROM urls
+            WHERE date IS NULL OR date < strftime('%s','now', ?)
+        ''', [sinceNow])
+        return [row[0] for row in x.fetchall()]
+
+    def markBaseUrlUpdated(self, uid: int) -> None:
+        self._db.execute('''
+            UPDATE urls SET date=strftime('%s','now') WHERE pk=?''', [uid])
+        self._db.commit()
+
+    def updateIpaUrl(self, baseUrlId: int, entry: 'tuple[str, int, str]') \
+            -> 'int|None':
+        ''' :entry: must be `(path_name, filesize, crc32)` '''
+        uid = self.getId(baseUrlId, entry[0])
+        if uid:
+            self._db.execute('UPDATE idx SET done=0, fsize=? WHERE pk=?;',
+                             [entry[1], uid])
+            self._db.commit()
+            return uid
+        if self.insertIpaUrls(baseUrlId, [entry]) > 0:
+            x = self._db.execute('SELECT MAX(pk) FROM idx;')
+            return x.fetchone()[0]
+        return None
 
     # Export JSON
 
@@ -295,22 +356,43 @@ class CacheDB:
 # [add] Process HTML link list
 ###############################################
 
-def crawler(url: str) -> None:
+def addNewUrl(url: str) -> None:
+    archiveId = extractArchiveOrgId(url)
+    if not archiveId:
+        return
+    baseUrlId = CacheDB().insertBaseUrl(urlForArchiveOrgId(archiveId))
+    json_file = pathToListJson(baseUrlId)
+    entries = downloadListArchiveOrg(archiveId, json_file)
+    inserted = CacheDB().insertIpaUrls(baseUrlId, entries)
+    print(f'new links added: {inserted} of {len(entries)}')
+
+
+def extractArchiveOrgId(url: str) -> 'str|None':
     match = re_archive_url.match(url)
     if not match:
         print(f'[WARN] not an archive.org url. Ignoring "{url}"', file=stderr)
-        return
-    downloadListArchiveOrg(match.group(1))
+        return None
+    return match.group(1)
 
 
-def downloadListArchiveOrg(archiveId: str) -> None:
-    baseUrl = f'https://archive.org/download/{archiveId}'
-    baseUrlId = CacheDB().insertBaseUrl(baseUrl)
-    json_file = CACHE_DIR / 'url_cache' / (str(baseUrlId) + '.json.gz')
-    json_file.parent.mkdir(exist_ok=True)
+def urlForArchiveOrgId(archiveId: str) -> str:
+    return f'https://archive.org/download/{archiveId}'
+
+
+def pathToListJson(baseUrlId: int, *, tmp: bool = False) -> Path:
+    if tmp:
+        return CACHE_DIR / 'url_cache' / f'tmp_{baseUrlId}.json.gz'
+    return CACHE_DIR / 'url_cache' / f'{baseUrlId}.json.gz'
+
+
+def downloadListArchiveOrg(
+    archiveId: str, json_file: Path, *, force: bool = False
+) -> 'list[tuple[str, int, str]]':
+    ''' :returns: List of `(path_name, file_size, crc32)` '''
     # store json for later
-    if not json_file.exists():
-        print(f'load: [{baseUrlId}] {baseUrl}')
+    if force or not json_file.exists():
+        json_file.parent.mkdir(exist_ok=True)
+        print(f'load: {archiveId}')
         req = Request(f'https://archive.org/metadata/{archiveId}/files')
         req.add_header('Accept-Encoding', 'deflate, gzip')
         with urlopen(req) as page:
@@ -324,11 +406,75 @@ def downloadListArchiveOrg(archiveId: str) -> None:
     with gzip.open(json_file, 'rb') as fp:
         data = json.load(fp)
     # process and add to DB
-    entries = [(baseUrlId, x['name'], int(x.get('size', 0)))
-               for x in data['result']
-               if x['source'] == 'original' and x['name'].endswith('.ipa')]
-    inserted = CacheDB().insertIpaUrls(entries)
-    print(f'new links added: {inserted} of {len(entries)}')
+    return [(x['name'], int(x.get('size', 0)), x.get('crc32'))
+            for x in data['result']
+            if x['source'] == 'original' and x['name'].endswith('.ipa')]
+
+
+###############################################
+# [update] Re-index existing URL caches
+###############################################
+
+def updateUrl(url_or_uid: 'str|int', proc_i: int, proc_total: int):
+    baseUrlId, url = _lookupBaseUrl(url_or_uid)
+    if not baseUrlId or not url:
+        print(f'[ERROR] Ignoring "{url_or_uid}". Not found in DB', file=stderr)
+        return
+
+    archiveId = extractArchiveOrgId(url) or ''  # guaranteed to return str
+    print(f'Updating [{proc_i}/{proc_total}] {archiveId}')
+
+    old_json_file = pathToListJson(baseUrlId)
+    new_json_file = pathToListJson(baseUrlId, tmp=True)
+    old_entries = set(downloadListArchiveOrg(archiveId, old_json_file))
+    new_entries = set(downloadListArchiveOrg(archiveId, new_json_file))
+    old_diff = old_entries - new_entries
+    new_diff = new_entries - old_entries
+
+    DB = CacheDB()
+    if old_diff or new_diff:
+        c_del = 0
+        c_new = 0
+        for old_entry in old_diff:  # no need to sort
+            uid = DB.getId(baseUrlId, old_entry[0])
+            if uid:
+                print(f'  rm: [{uid}] {old_entry}')
+                DB.setPermanentError(uid)
+                c_del += 1
+            else:
+                print(f'  [ERROR] could not find old entry {old_entry[0]}',
+                      file=stderr)
+        for new_entry in sorted(new_diff):
+            uid = DB.updateIpaUrl(baseUrlId, new_entry)
+            if uid:
+                print(f'  add: [{uid}] {new_entry}')
+                c_new += 1
+            else:
+                print(f'  [ERROR] updating {new_entry[0]}', file=stderr)
+        print(f'  updated -{c_del}/+{c_new} entries.')
+        os.rename(new_json_file, old_json_file)
+    else:
+        print('  no changes.')
+
+    DB.markBaseUrlUpdated(baseUrlId)
+    if new_json_file.exists():
+        os.remove(new_json_file)
+
+
+def _lookupBaseUrl(url_or_index: 'str|int') -> 'tuple[int|None, str|None]':
+    if isinstance(url_or_index, str):
+        if url_or_index.isnumeric():
+            url_or_index = int(url_or_index)
+    if isinstance(url_or_index, int):
+        baseUrlId = url_or_index
+        url = CacheDB().getBaseUrlForId(baseUrlId)
+    else:
+        archiveId = extractArchiveOrgId(url_or_index)
+        if not archiveId:
+            return None, None
+        url = urlForArchiveOrgId(archiveId)
+        baseUrlId = CacheDB().getIdForBaseUrl(url)
+    return baseUrlId, url
 
 
 ###############################################
