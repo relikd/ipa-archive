@@ -632,12 +632,13 @@ def unpackNameListFromPlistDict(bundleDict: 'dict|None') -> 'list[str]|None':
 
 
 def resolutionIndex(icon_name: str):
+    penalty = 0
+    if 'small' in icon_name.lower() or icon_name.lower().startswith('default'):
+        penalty = 10
     for i, match in enumerate(RESOLUTION_ORDER):
         if match in icon_name:
-            return i
-    if 'small' in icon_name.lower():
-        return 99
-    return 50
+            return i + penalty
+    return 50 + penalty
 
 
 def sortedByResolution(icons: 'list[str]') -> 'list[str]':
