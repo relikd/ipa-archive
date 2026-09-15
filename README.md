@@ -1,3 +1,19 @@
+> [!NOTE]
+> Hey there, when I published this project, I imagined it would grow over time.
+> I thought the community would create PRs to add new URLs.
+> Apparently, that didn't happen.
+> It's a little bit sad to see that no one even tried merging.
+> Instead, there are a bunch of forks – all with different indices.
+>
+> I don't mind the forks.
+> In fact, it's good to see it spreading.
+> And I was really happy when I saw the fork which re-imagined the idea and used these tools to create an index on APK files.
+>
+> If you like this project (or a fork thereof), leave a star.
+>
+> As a result, this repo is now considered: ARCHIVED.
+
+
 # The Grand IPA Archive
 
 Hello, this project aims to provide a searchable and filterable index for .ipa files.
